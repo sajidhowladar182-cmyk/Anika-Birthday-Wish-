@@ -22,7 +22,7 @@ button,input{font:inherit}
 button{cursor:pointer}
 
 #app{
-  width:100vw;height:100dvh;position:relative;overflow:hidden;
+  width:100vw;height:100vh;height:100dvh;position:relative;overflow:hidden;
   background:
     radial-gradient(circle at 12% 15%,rgba(255,255,255,.9) 0 4px,transparent 5px),
     radial-gradient(circle at 88% 25%,rgba(255,190,190,.35) 0 5px,transparent 6px),
@@ -35,11 +35,11 @@ button{cursor:pointer}
 #app:after{width:300px;height:300px;background:#f7c5d055;bottom:-180px;right:-80px}
 
 .page{
-  position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
-  padding:18px;opacity:0;pointer-events:none;transform:translateX(40px) scale(.98);
-  transition:opacity .65s ease,transform .65s cubic-bezier(.22,.8,.2,1);
+  position:absolute;inset:0;display:none;align-items:center;justify-content:center;
+  padding:18px;overflow:hidden;
 }
-.page.active{opacity:1;pointer-events:auto;transform:none}
+.page.active{display:flex;animation:pageIn .65s cubic-bezier(.22,.8,.2,1) both;z-index:5;}
+@keyframes pageIn{from{opacity:0;transform:translateX(35px) scale(.985)}to{opacity:1;transform:translateX(0) scale(1)}}
 .card{
   width:min(94vw,480px);max-height:94dvh;overflow:auto;
   background:rgba(255,253,249,.94);border:1px solid #ffffffaa;border-radius:30px;
@@ -383,8 +383,12 @@ function goTo(n){
     setMusicTime(MUSIC_START);
   }
 
-  pages.forEach(p=>p.classList.remove("active"));
+  pages.forEach(p=>{
+    p.classList.remove("active");
+    p.style.display="none";
+  });
   const next = document.getElementById("page"+n);
+  next.style.display="flex";
   next.classList.add("active");
   currentPage = n;
 
@@ -602,8 +606,10 @@ document.getElementById("restart").onclick=()=>{
   setMusicTime(MUSIC_START);
   document.getElementById("music").pause();
   document.getElementById("musicBtn").textContent="🔊";
-  pages.forEach(p=>p.classList.remove("active"));
-  document.getElementById("page1").classList.add("active");
+  pages.forEach(p=>{p.classList.remove("active");p.style.display="none";});
+  const first=document.getElementById("page1");
+  first.style.display="flex";
+  first.classList.add("active");
 };
 
 /* Confetti */
@@ -627,6 +633,13 @@ document.getElementById("music").addEventListener("ended",()=>{
   setMusicTime(MUSIC_START);
   startMusic();
 });
+
+// Robust first-page initialization for older Android/Chrome.
+(function(){
+  const first=document.getElementById("page1");
+  pages.forEach(p=>p.classList.remove("active"));
+  first.classList.add("active");
+})();
 </script>
 </body>
 </html>
