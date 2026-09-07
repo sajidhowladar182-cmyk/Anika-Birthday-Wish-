@@ -6,34 +6,16 @@
 <title>For Anika ❤️ | Happy Birthday</title>
 
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap');
-
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
 }
 
-:root{
-    --pink:#ff7f9f;
-    --dark:#4a2724;
-    --cream:#fff4df;
-    --peach:#ffd8c8;
-    --red:#ef526d;
-    --gold:#ffd66b;
-}
-
-html,body{
-    width:100%;
-    min-height:100%;
-}
-
 body{
-    font-family:'Poppins','Baloo 2',sans-serif;
-    background:
-      radial-gradient(circle at 10% 10%,#fff 0 3px,transparent 4px),
-      linear-gradient(135deg,#fff0d4,#ffd8c8 45%,#ffe9d7);
-    color:var(--dark);
+    font-family:Arial,sans-serif;
+    background:linear-gradient(135deg,#fff0d4,#ffd8c8,#ffe9d7);
+    color:#4a2724;
     overflow:hidden;
 }
 
@@ -47,8 +29,6 @@ body{
 .page{
     position:absolute;
     inset:0;
-    width:100%;
-    height:100%;
     display:flex;
     justify-content:center;
     align-items:center;
@@ -56,10 +36,7 @@ body{
     opacity:0;
     visibility:hidden;
     transform:scale(.96) translateY(20px);
-    transition:
-        opacity .7s ease,
-        transform .7s cubic-bezier(.2,.8,.2,1),
-        visibility .7s;
+    transition:.7s ease;
     overflow-y:auto;
 }
 
@@ -74,36 +51,23 @@ body{
     width:min(94vw,520px);
     max-height:94vh;
     overflow:auto;
-    background:rgba(255,255,255,.92);
+    background:rgba(255,255,255,.94);
     border-radius:28px;
     padding:28px;
-    box-shadow:
-      0 20px 60px rgba(109,55,48,.18),
-      inset 0 0 0 1px rgba(255,255,255,.8);
+    box-shadow:0 20px 60px rgba(109,55,48,.18);
     text-align:center;
-    position:relative;
-}
-
-.card::-webkit-scrollbar{
-    width:5px;
-}
-
-.card::-webkit-scrollbar-thumb{
-    background:#f4a6aa;
-    border-radius:20px;
 }
 
 h1,h2,h3{
-    font-family:'Baloo 2',sans-serif;
+    margin-bottom:12px;
 }
 
 h1{
-    font-size:clamp(30px,7vw,48px);
-    line-height:1;
+    font-size:42px;
 }
 
 h2{
-    font-size:clamp(26px,6vw,38px);
+    font-size:32px;
 }
 
 p{
@@ -112,25 +76,28 @@ p{
 
 button{
     border:0;
-    font-family:inherit;
     cursor:pointer;
+    font-family:inherit;
 }
 
-.next-btn{
+.next-btn,
+.last-yes{
     margin-top:20px;
-    padding:13px 26px;
+    padding:13px 28px;
     border-radius:50px;
     background:linear-gradient(135deg,#ff789a,#ef526d);
-    color:#fff;
+    color:white;
     font-size:16px;
-    font-weight:700;
-    box-shadow:0 8px 20px rgba(239,82,109,.25);
-    transition:.25s;
+    font-weight:bold;
 }
 
-.next-btn:hover{
-    transform:translateY(-3px) scale(1.03);
+.subtitle{
+    color:#8a5d56;
+    font-size:13px;
+    margin:8px 0 16px;
 }
+
+/* HEARTS */
 
 .hearts{
     position:fixed;
@@ -150,162 +117,45 @@ button{
 
 @keyframes floatHeart{
     0%{
-        transform:translateY(0) rotate(0deg) scale(.8);
+        transform:translateY(0);
         opacity:0;
     }
     15%{opacity:.65;}
     100%{
-        transform:translateY(-110vh) rotate(360deg) scale(1.2);
+        transform:translateY(-110vh) rotate(360deg);
         opacity:0;
     }
 }
 
-/* =========================
-   PAGE 1 PASSWORD
-========================= */
+/* PASSWORD */
 
 .lock-icon{
     font-size:48px;
-    margin-bottom:5px;
 }
 
 .teddy{
-    position:relative;
-    width:180px;
-    height:190px;
-    margin:8px auto 10px;
-    animation:teddyHappy 1.5s ease-in-out infinite;
+    font-size:100px;
+    margin:10px 0;
+    animation:teddy 1.5s infinite;
 }
 
-.teddy .ear{
-    position:absolute;
-    width:55px;
-    height:55px;
-    border-radius:50%;
-    background:#b98255;
-    top:15px;
-    z-index:0;
-    box-shadow:inset 0 0 0 7px #d49b6c;
-}
-
-.teddy .ear.left{left:23px;}
-.teddy .ear.right{right:23px;}
-
-.teddy .head{
-    position:absolute;
-    width:125px;
-    height:110px;
-    background:#c58b5b;
-    border-radius:48% 48% 45% 45%;
-    left:27px;
-    top:27px;
-    z-index:1;
-}
-
-.teddy .muzzle{
-    position:absolute;
-    width:65px;
-    height:47px;
-    background:#e2b27d;
-    border-radius:50%;
-    left:30px;
-    top:48px;
-}
-
-.eye{
-    position:absolute;
-    width:9px;
-    height:12px;
-    background:#3b2620;
-    border-radius:50%;
-    top:42px;
-}
-
-.eye.l{left:28px;}
-.eye.r{right:28px;}
-
-.nose{
-    position:absolute;
-    width:13px;
-    height:10px;
-    border-radius:50%;
-    background:#39221e;
-    left:56px;
-    top:64px;
-}
-
-.mouth{
-    position:absolute;
-    width:18px;
-    height:10px;
-    border-bottom:3px solid #39221e;
-    border-radius:50%;
-    left:53px;
-    top:72px;
-}
-
-.teddy .body{
-    position:absolute;
-    width:95px;
-    height:90px;
-    background:#c58b5b;
-    border-radius:45% 45% 35% 35%;
-    left:42px;
-    top:112px;
-}
-
-.arm{
-    position:absolute;
-    width:28px;
-    height:68px;
-    background:#c58b5b;
-    border-radius:30px;
-    top:120px;
-}
-
-.arm.l{
-    left:24px;
-    transform:rotate(35deg);
-}
-
-.arm.r{
-    right:24px;
-    transform:rotate(-35deg);
-}
-
-@keyframes teddyHappy{
-    0%,100%{transform:translateY(0) rotate(0);}
-    25%{transform:translateY(-16px) rotate(-4deg);}
-    50%{transform:translateY(-24px) rotate(4deg);}
-    75%{transform:translateY(-12px) rotate(-3deg);}
+@keyframes teddy{
+    0%,100%{transform:translateY(0);}
+    50%{transform:translateY(-15px);}
 }
 
 .teddy.sad{
-    animation:teddySad .8s ease-in-out infinite;
+    animation:sad .5s infinite;
 }
 
-.teddy.sad .mouth{
-    border-bottom:0;
-    border-top:3px solid #39221e;
-    top:77px;
-}
-
-@keyframes teddySad{
-    0%,100%{transform:translateX(0);}
-    25%{transform:translateX(-7px) rotate(-3deg);}
-    75%{transform:translateX(7px) rotate(3deg);}
-}
-
-.subtitle{
-    color:#8a5d56;
-    font-size:13px;
-    margin:5px 0 16px;
+@keyframes sad{
+    50%{transform:translateX(8px);}
 }
 
 .passcode{
     display:flex;
     justify-content:center;
-    gap:7px;
+    gap:6px;
     margin:15px 0;
 }
 
@@ -317,68 +167,46 @@ button{
     border-radius:10px;
     text-align:center;
     font-size:21px;
-    font-weight:700;
-    color:#57362f;
-    outline:none;
+    font-weight:bold;
 }
 
 .keypad{
     display:grid;
     grid-template-columns:repeat(3,1fr);
     gap:8px;
-    margin-top:15px;
 }
 
 .key{
-    padding:10px;
+    padding:11px;
     border-radius:12px;
-    background:#fff;
+    background:white;
     border:1px solid #ecc9b4;
-    color:#52332e;
     font-size:20px;
-    font-weight:600;
-    box-shadow:0 4px 8px rgba(0,0,0,.04);
-    transition:.2s;
-}
-
-.key:hover{
-    transform:translateY(-2px);
-    background:#fff3e7;
 }
 
 .error{
     min-height:25px;
     color:#e34c61;
     font-size:13px;
-    font-weight:600;
+    margin-top:8px;
 }
 
 .success{
     color:#2f9b63;
-    font-weight:700;
 }
 
 .date-note{
-    margin-top:16px;
-    padding:12px 15px;
+    margin-top:15px;
+    padding:12px;
     border-radius:16px;
     background:#fff5e3;
-    border:1px dashed #efbd88;
-    font-size:12px;
 }
 
-/* =========================
-   PAGE 2 BALLOON
-========================= */
-
-.game-title{
-    margin-bottom:4px;
-}
+/* BALLOON */
 
 .balloon-area{
     height:390px;
     position:relative;
-    margin-top:10px;
     overflow:hidden;
     border-radius:25px;
     background:linear-gradient(#dff7ff,#fff2e1);
@@ -389,24 +217,11 @@ button{
     position:absolute;
     width:90px;
     height:115px;
-    border-radius:50% 50% 45% 45%;
-    background:radial-gradient(circle at 32% 25%,#fff 0 7%,transparent 8%),
-               linear-gradient(135deg,#ff8fa9,#ed5471);
+    border-radius:50%;
+    background:linear-gradient(135deg,#ff8fa9,#ed5471);
     top:35px;
     right:28%;
-    box-shadow:inset -8px -10px 0 rgba(160,32,65,.1);
     transition:.3s;
-}
-
-.balloon:before{
-    content:"";
-    position:absolute;
-    width:14px;
-    height:14px;
-    background:#ed5471;
-    bottom:-7px;
-    left:38px;
-    transform:rotate(45deg);
 }
 
 .balloon:after{
@@ -420,36 +235,13 @@ button{
 }
 
 .balloon.pop{
-    animation:balloonPop .55s forwards;
+    animation:pop .55s forwards;
 }
 
-@keyframes balloonPop{
+@keyframes pop{
     0%{transform:scale(1);}
-    45%{transform:scale(1.25);}
+    50%{transform:scale(1.25);}
     100%{transform:scale(0);opacity:0;}
-}
-
-.pop-particles{
-    position:absolute;
-    inset:0;
-    pointer-events:none;
-}
-
-.particle{
-    position:absolute;
-    font-size:22px;
-    animation:particle .9s forwards;
-}
-
-@keyframes particle{
-    from{
-        transform:translate(0,0) scale(.5) rotate(0);
-        opacity:1;
-    }
-    to{
-        transform:translate(var(--x),var(--y)) scale(1.3) rotate(300deg);
-        opacity:0;
-    }
 }
 
 .slingshot{
@@ -469,37 +261,6 @@ button{
     left:38px;
     bottom:0;
     border-radius:10px;
-    transform:rotate(5deg);
-}
-
-.slingshot-stick:before,
-.slingshot-stick:after{
-    content:"";
-    position:absolute;
-    width:14px;
-    height:55px;
-    background:#9b643b;
-    top:-34px;
-    border-radius:10px;
-}
-
-.slingshot-stick:before{
-    transform:rotate(-27deg);
-    left:-22px;
-}
-
-.slingshot-stick:after{
-    transform:rotate(27deg);
-    left:22px;
-}
-
-.rubber{
-    position:absolute;
-    width:55px;
-    height:2px;
-    background:#51322d;
-    top:9px;
-    left:18px;
 }
 
 .projectile{
@@ -510,9 +271,7 @@ button{
     height:27px;
     border-radius:50%;
     background:#ff6f91;
-    box-shadow:0 3px 10px rgba(0,0,0,.2);
     cursor:grab;
-    touch-action:none;
     z-index:5;
 }
 
@@ -530,46 +289,34 @@ button{
     margin-top:8px;
 }
 
-/* =========================
-   PAGE 3 LOVE
-========================= */
-
-.love-teddy{
-    margin:0 auto 15px;
-    width:180px;
-}
+/* LOVE */
 
 .bear-small{
-    font-size:72px;
+    font-size:80px;
     animation:bounceBear 1.4s infinite;
 }
 
 @keyframes bounceBear{
-    0%,100%{transform:translateY(0);}
-    50%{transform:translateY(-12px) rotate(4deg);}
+    50%{transform:translateY(-12px);}
 }
 
 .question{
     font-size:26px;
-    font-weight:700;
-    color:#55332e;
+    font-weight:bold;
 }
 
 .love-buttons{
-    position:relative;
-    min-height:100px;
     display:flex;
     justify-content:center;
     gap:15px;
-    align-items:center;
     margin-top:20px;
 }
 
-.yes-btn,.no-btn{
+.yes-btn,
+.no-btn{
     padding:12px 30px;
     border-radius:50px;
-    font-weight:700;
-    font-size:16px;
+    font-weight:bold;
 }
 
 .yes-btn{
@@ -578,88 +325,40 @@ button{
 }
 
 .no-btn{
-    background:#fff;
+    background:white;
     border:1px solid #e7b6aa;
-    color:#754c45;
 }
 
 .cry{
     display:none;
     font-size:55px;
-    animation:cry .8s infinite;
+    margin-top:20px;
 }
 
-@keyframes cry{
-    0%,100%{transform:translateY(0);}
-    50%{transform:translateY(7px);}
-}
-
-/* =========================
-   PAGE 4 LAST OPTION
-========================= */
-
-.last-option-card{
-    background:rgba(255,250,247,.95);
-}
+/* LAST OPTION */
 
 .last-heart{
-    font-size:90px;
-    margin:10px 0;
+    font-size:85px;
     animation:lastHeart 1.2s infinite;
 }
 
 @keyframes lastHeart{
-    0%,100%{
-        transform:scale(1);
-    }
-    50%{
-        transform:scale(1.15);
-    }
+    50%{transform:scale(1.15);}
 }
 
 .last-question{
-    font-size:24px;
-    font-weight:700;
-    color:#55332e;
-    margin-top:10px;
+    font-size:23px;
+    font-weight:bold;
+    margin-top:12px;
 }
 
 .last-text{
     color:#8a5d56;
-    font-size:14px;
+    margin-top:10px;
     line-height:1.8;
-    margin-top:8px;
 }
 
-.last-yes{
-    display:inline-block;
-    margin-top:25px;
-    padding:15px 45px;
-    border-radius:50px;
-    background:linear-gradient(135deg,#ff789a,#ef526d);
-    color:white;
-    font-size:18px;
-    font-weight:700;
-    box-shadow:0 10px 25px rgba(239,82,109,.3);
-    animation:yesPulse 1.5s infinite;
-}
-
-@keyframes yesPulse{
-    0%,100%{
-        transform:scale(1);
-    }
-    50%{
-        transform:scale(1.06);
-    }
-}
-
-/* =========================
-   PAGE 5 CAKE
-========================= */
-
-.cake-card{
-    background:rgba(255,250,244,.95);
-}
+/* CAKE */
 
 .cake{
     position:relative;
@@ -680,31 +379,30 @@ button{
 
 .layer{
     position:absolute;
-    left:30px;
-    width:200px;
     border-radius:14px 14px 25px 25px;
-    box-shadow:inset 0 -8px 0 rgba(0,0,0,.07);
 }
 
-.layer.bottom{
+.bottom{
+    width:200px;
     height:65px;
+    left:30px;
     bottom:28px;
     background:#d98968;
 }
 
-.layer.mid{
-    height:55px;
-    bottom:83px;
-    left:45px;
+.mid{
     width:170px;
+    height:55px;
+    left:45px;
+    bottom:83px;
     background:#f0aa83;
 }
 
-.layer.top{
-    height:48px;
-    bottom:132px;
-    left:58px;
+.top{
     width:145px;
+    height:48px;
+    left:58px;
+    bottom:132px;
     background:#ffd1ae;
 }
 
@@ -712,9 +410,9 @@ button{
     position:absolute;
     width:100%;
     height:18px;
+    top:-7px;
     background:#fff8e9;
     border-radius:50%;
-    top:-7px;
 }
 
 .candle{
@@ -723,9 +421,9 @@ button{
     height:65px;
     bottom:174px;
     background:repeating-linear-gradient(
-      45deg,
-      #fff 0 6px,
-      #ef6c83 6px 12px
+        45deg,
+        #fff 0 6px,
+        #ef6c83 6px 12px
     );
     border-radius:5px;
 }
@@ -743,23 +441,17 @@ button{
     transform:rotate(-45deg);
     top:-28px;
     left:-3px;
-    box-shadow:0 0 15px #ff9d00;
-    animation:flame 0.7s infinite alternate;
+    animation:flame .7s infinite alternate;
 }
 
 @keyframes flame{
-    from{transform:rotate(-45deg) scale(.9);}
-    to{transform:rotate(-40deg) scale(1.1);}
+    to{
+        transform:rotate(-40deg) scale(1.1);
+    }
 }
 
 .candle.off .flame{
     display:none;
-}
-
-.birthday-text{
-    color:#df6375;
-    font-weight:600;
-    margin-bottom:10px;
 }
 
 .mic-status{
@@ -768,9 +460,7 @@ button{
     margin-top:10px;
 }
 
-/* =========================
-   GALLERY PAGE 6
-========================= */
+/* MEMORY */
 
 .gallery-grid{
     display:grid;
@@ -781,39 +471,13 @@ button{
 
 .gallery-grid img{
     width:100%;
-    aspect-ratio:1/1;
+    aspect-ratio:1;
     object-fit:cover;
     border-radius:18px;
     border:4px solid white;
-    box-shadow:0 7px 15px rgba(0,0,0,.1);
-    background:#f4e6d9;
-    transition:.3s;
 }
 
-.gallery-grid img:hover{
-    transform:scale(1.03) rotate(1deg);
-}
-
-.gallery-grid img:nth-child(2n){
-    border-color:#ffc2c8;
-}
-
-.gallery-grid img:nth-child(3n){
-    border-color:#c8e3d4;
-}
-
-/* =========================
-   MESSAGE PAGE 7
-========================= */
-
-.message-card{
-    text-align:left;
-}
-
-.message-card h2,
-.message-card .message-sub{
-    text-align:center;
-}
+/* MESSAGE */
 
 .message{
     margin-top:18px;
@@ -821,57 +485,31 @@ button{
     border:2px solid #f2d4ad;
     border-radius:20px;
     padding:20px;
-    font-size:14px;
     line-height:2;
-    white-space:pre-line;
+    text-align:left;
 }
 
 .signature{
     text-align:right;
-    font-weight:700;
+    font-weight:bold;
     color:#d95c72;
     margin-top:14px;
 }
 
-/* =========================
-   FINAL PAGE 8
-========================= */
-
-.final-card{
-    background:rgba(255,250,247,.94);
-}
+/* FINAL */
 
 .kiss-bears{
-    font-size:110px;
-    letter-spacing:-30px;
+    font-size:100px;
     margin:15px 0;
-    animation:kiss .9s infinite alternate;
-}
-
-@keyframes kiss{
-    from{transform:translateY(0);}
-    to{transform:translateY(-9px) scale(1.04);}
-}
-
-.kiss-hearts{
-    font-size:30px;
-    margin-top:-20px;
-    animation:heartPulse 1s infinite;
-}
-
-@keyframes heartPulse{
-    50%{transform:scale(1.2);}
 }
 
 .final-love{
     color:#ed5575;
     font-size:30px;
-    font-weight:700;
+    font-weight:bold;
 }
 
-/* =========================
-   CONFETTI
-========================= */
+/* CONFETTI */
 
 .confetti{
     position:fixed;
@@ -889,19 +527,9 @@ button{
     }
 }
 
-/* =========================
-   RESPONSIVE
-========================= */
-
 @media(max-width:430px){
-
     .card{
         padding:20px 15px;
-        border-radius:24px;
-    }
-
-    .passcode{
-        gap:4px;
     }
 
     .passcode input{
@@ -911,20 +539,6 @@ button{
 
     .balloon-area{
         height:350px;
-    }
-
-    .gallery-grid{
-        gap:8px;
-    }
-
-    .message{
-        font-size:13px;
-        line-height:1.9;
-        padding:15px;
-    }
-
-    .last-heart{
-        font-size:75px;
     }
 }
 </style>
@@ -936,528 +550,405 @@ button{
 
 <div class="hearts" id="hearts"></div>
 
-<!-- =====================================================
-     PAGE 1 PASSWORD
-===================================================== -->
+<!-- PAGE 1 -->
 
 <section class="page active" id="page1">
 <div class="card">
 
-    <div class="lock-icon">🔒</div>
+<div class="lock-icon">🔒</div>
 
-    <h1>Locked</h1>
+<h1>Locked</h1>
 
-    <div class="teddy" id="loginTeddy">
+<div class="teddy" id="loginTeddy">🧸</div>
 
-        <div class="ear left"></div>
-        <div class="ear right"></div>
+<h3>Enter the 8-digit passcode</h3>
 
-        <div class="head">
-            <div class="eye l"></div>
-            <div class="eye r"></div>
-            <div class="muzzle"></div>
-            <div class="nose"></div>
-            <div class="mouth"></div>
-        </div>
+<div class="subtitle">
+আমাদের সম্পর্কের প্রথম দিন ❤️
+</div>
 
-        <div class="body"></div>
-        <div class="arm l"></div>
-        <div class="arm r"></div>
+<div class="passcode" id="passcode">
+<input readonly>
+<input readonly>
+<input readonly>
+<input readonly>
+<input readonly>
+<input readonly>
+<input readonly>
+<input readonly>
+</div>
 
-    </div>
+<div class="keypad">
 
-    <h3>Enter the 8-digit passcode</h3>
+<button class="key" onclick="pressKey('1')">1</button>
+<button class="key" onclick="pressKey('2')">2</button>
+<button class="key" onclick="pressKey('3')">3</button>
 
-    <div class="subtitle">
-        আমাদের সম্পর্কের প্রথম দিন ❤️
-    </div>
+<button class="key" onclick="pressKey('4')">4</button>
+<button class="key" onclick="pressKey('5')">5</button>
+<button class="key" onclick="pressKey('6')">6</button>
 
-    <div class="passcode" id="passcode">
+<button class="key" onclick="pressKey('7')">7</button>
+<button class="key" onclick="pressKey('8')">8</button>
+<button class="key" onclick="pressKey('9')">9</button>
 
-        <input maxlength="1" readonly>
-        <input maxlength="1" readonly>
-        <input maxlength="1" readonly>
-        <input maxlength="1" readonly>
-        <input maxlength="1" readonly>
-        <input maxlength="1" readonly>
-        <input maxlength="1" readonly>
-        <input maxlength="1" readonly>
+<button class="key" onclick="clearPass()">⌫</button>
+<button class="key" onclick="pressKey('0')">0</button>
+<button class="key" onclick="checkPassword()">✓</button>
 
-    </div>
+</div>
 
-    <div class="keypad">
+<div class="error" id="passMessage"></div>
 
-        <button class="key" onclick="pressKey('1')">1</button>
-        <button class="key" onclick="pressKey('2')">2</button>
-        <button class="key" onclick="pressKey('3')">3</button>
-
-        <button class="key" onclick="pressKey('4')">4</button>
-        <button class="key" onclick="pressKey('5')">5</button>
-        <button class="key" onclick="pressKey('6')">6</button>
-
-        <button class="key" onclick="pressKey('7')">7</button>
-        <button class="key" onclick="pressKey('8')">8</button>
-        <button class="key" onclick="pressKey('9')">9</button>
-
-        <button class="key" onclick="clearPass()">⌫</button>
-        <button class="key" onclick="pressKey('0')">0</button>
-        <button class="key" onclick="checkPassword()">✓</button>
-
-    </div>
-
-    <div class="error" id="passMessage"></div>
-
-    <div class="date-note">
-        💗 ছোট্ট একটা কথা...<br>
-        <b>পাসওয়ার্ডটি হচ্ছে আমাদের রিলেশনের প্রথম দিন।</b>
-    </div>
+<div class="date-note">
+💗 ছোট্ট একটা কথা...<br>
+<b>পাসওয়ার্ডটি হচ্ছে আমাদের রিলেশনের প্রথম দিন।</b>
+</div>
 
 </div>
 </section>
 
 
-<!-- =====================================================
-     PAGE 2 BALLOON
-===================================================== -->
+<!-- PAGE 2 -->
 
 <section class="page" id="page2">
 <div class="card">
 
-    <h2 class="game-title">🎈 Pop The Balloon 🎈</h2>
+<h2>🎈 Pop The Balloon 🎈</h2>
 
-    <p class="subtitle">
-        ভালোবাসা দিয়ে টেনে ছেড়ে দাও... ❤️
-    </p>
+<p class="subtitle">
+ভালোবাসা দিয়ে টেনে ছেড়ে দাও... ❤️
+</p>
 
-    <div class="balloon-area" id="balloonArea">
+<div class="balloon-area" id="balloonArea">
 
-        <div class="balloon" id="balloon"></div>
+<div class="balloon" id="balloon"></div>
 
-        <div class="pop-particles" id="particles"></div>
+<div class="slingshot">
+<div class="slingshot-stick"></div>
+</div>
 
-        <div class="slingshot">
-            <div class="slingshot-stick"></div>
-            <div class="rubber" id="rubber"></div>
-        </div>
+<div class="projectile" id="projectile"></div>
 
-        <div class="projectile" id="projectile"></div>
+</div>
 
-    </div>
+<p class="instruction">
+❤️ গোলাপি বলটাকে ধরে পিছনে টেনে ছেড়ে দাও
+</p>
 
-    <p class="instruction">
-        ❤️ গোলাপি বলটাকে ধরে পিছনে টেনে ছেড়ে দাও
-    </p>
-
-    <button class="next-btn"
-            id="balloonNext"
-            style="display:none"
-            onclick="goTo(3)">
-        💕 Continue
-    </button>
+<button
+class="next-btn"
+id="balloonNext"
+style="display:none"
+onclick="goTo(3)">
+💕 Continue
+</button>
 
 </div>
 </section>
 
 
-<!-- =====================================================
-     PAGE 3 LOVE QUESTION
-===================================================== -->
+<!-- PAGE 3 -->
 
 <section class="page" id="page3">
 <div class="card">
 
-    <div class="love-teddy">
-        <div class="bear-small">🧸</div>
-    </div>
+<div class="bear-small">🧸</div>
 
-    <div class="kiss-hearts">
-        💕 💗 💕
-    </div>
+<div>💕 💗 💕</div>
 
-    <div class="question">
-        Do You Love Me? 🥺❤️
-    </div>
+<div class="question">
+Do You Love Me? 🥺❤️
+</div>
 
-    <p class="subtitle">
-        সত্যি করে উত্তর দাও...
-    </p>
+<p class="subtitle">
+সত্যি করে উত্তর দাও...
+</p>
 
-    <div class="love-buttons" id="loveButtons">
+<div class="love-buttons" id="loveButtons">
 
-        <button class="yes-btn" onclick="loveYes()">
-            YES ❤️
-        </button>
+<button class="yes-btn" onclick="loveYes()">
+YES ❤️
+</button>
 
-        <button class="no-btn" onclick="loveNo()">
-            NO 🥺
-        </button>
+<button class="no-btn" onclick="loveNo()">
+NO 🥺
+</button>
 
-    </div>
+</div>
 
-    <div class="cry" id="cry">
-        😭💔
-    </div>
+<div class="cry" id="cry">
+😭💔
+</div>
 
-    <div id="loveResult"></div>
+<div id="loveResult"></div>
 
 </div>
 </section>
 
 
-<!-- =====================================================
-     PAGE 4 LAST OPTION
-===================================================== -->
+<!-- PAGE 4 LAST OPTION -->
 
 <section class="page" id="page4">
-<div class="card last-option-card">
+<div class="card">
 
-    <div class="last-heart">
-        💗
-    </div>
+<div class="last-heart">💗</div>
 
-    <h2>
-        This Is The Last Option 💗
-    </h2>
+<h2>
+This Is The Last Option 💗
+</h2>
 
-    <div class="last-question">
-        Are You Ready For Your Birthday Surprise? 🥺❤️
-    </div>
+<div class="last-question">
+Are You Ready For Your Birthday Surprise? 🥺❤️
+</div>
 
-    <p class="last-text">
-        তুমি যদি YES বলো...<br>
-        তাহলে তোমার জন্য আসছে<br>
-        একটা ছোট্ট Birthday Surprise 🎂🥰
-    </p>
+<p class="last-text">
+তুমি যদি YES বলো...<br>
+তাহলে তোমার জন্য আসছে<br>
+একটা ছোট্ট Birthday Surprise 🎂🥰
+</p>
 
-    <button class="last-yes" onclick="lastOptionYes()">
-        YES ❤️
-    </button>
+<button class="last-yes" onclick="lastOptionYes()">
+YES ❤️
+</button>
 
 </div>
 </section>
 
 
-<!-- =====================================================
-     PAGE 5 CAKE
-===================================================== -->
+<!-- PAGE 5 CAKE -->
 
 <section class="page" id="page5">
-<div class="card cake-card">
+<div class="card">
 
-    <h2>
-        Your Birthday Cake 🎂
-    </h2>
+<h2>🎂 Happy Birthday Anika 🎂</h2>
 
-    <p class="subtitle">
-        এবার শুধু একটা কাজ বাকি... 💗
-    </p>
+<p class="birthday-text">
+তোমার জন্য এই ছোট্ট কেকটা ❤️
+</p>
 
-    <div class="cake">
+<div class="cake">
 
-        <div class="plate"></div>
+<div class="plate"></div>
 
-        <div class="layer bottom">
-            <div class="frost"></div>
-        </div>
+<div class="layer bottom">
+<div class="frost"></div>
+</div>
 
-        <div class="layer mid">
-            <div class="frost"></div>
-        </div>
+<div class="layer mid">
+<div class="frost"></div>
+</div>
 
-        <div class="layer top">
-            <div class="frost"></div>
-        </div>
+<div class="layer top">
+<div class="frost"></div>
+</div>
 
-        <div class="candle c1" id="candle1">
-            <div class="flame"></div>
-        </div>
+<div class="candle c1">
+<div class="flame"></div>
+</div>
 
-        <div class="candle c2" id="candle2">
-            <div class="flame"></div>
-        </div>
+<div class="candle c2">
+<div class="flame"></div>
+</div>
 
-        <div class="candle c3" id="candle3">
-            <div class="flame"></div>
-        </div>
+<div class="candle c3">
+<div class="flame"></div>
+</div>
 
-    </div>
+</div>
 
-    <h3 class="birthday-text">
-        🎂 Happy Birthday To You 🎂
-    </h3>
-
-    <p>
-        চোখ বন্ধ করে একটা wish করো...<br>
-        তারপর মোমবাতিতে ফুঁ দাও 🥰
-    </p>
-
-    <button class="next-btn" onclick="blowCandles()">
-        🌬️ মোমবাতি নিভাও
-    </button>
-
-    <div class="mic-status" id="micStatus">
-        চাইলে নিচের Microphone option-ও ব্যবহার করতে পারো।
-    </div>
-
-    <button class="next-btn"
-            onclick="startBlowDetection()"
-            style="background:#fff;color:#e95e78;border:1px solid #f2b5bd;">
-        🎤 Blow With Microphone
-    </button>
+<div class="mic-status" id="micStatus">
+🎤 Microphone permission চাওয়া হচ্ছে...
+</div>
 
 </div>
 </section>
 
 
-<!-- =====================================================
-     PAGE 6 GALLERY
-===================================================== -->
+<!-- PAGE 6 MEMORY -->
 
 <section class="page" id="page6">
 <div class="card">
 
-    <h2>
-        My Happiness 💗
-    </h2>
+<h2>📸 Our Memories ❤️</h2>
 
-    <p class="subtitle">
-        আমার ছোট্ট পৃথিবীর কিছু সুন্দর মুহূর্ত... 🥰
-    </p>
+<p class="subtitle">
+আমাদের সুন্দর কিছু মুহূর্ত...
+</p>
 
-    <div class="gallery-grid">
+<div class="gallery-grid">
 
-        <img src="https://drive.google.com/thumbnail?id=1IxQb_SKYuf0hPokHmNPZ2MXHAs54zu5M&sz=w1000"
-             alt="Memory 1">
+<img src="memory1.jpg" alt="Memory 1">
+<img src="memory2.jpg" alt="Memory 2">
+<img src="memory3.jpg" alt="Memory 3">
+<img src="memory4.jpg" alt="Memory 4">
+<img src="memory5.jpg" alt="Memory 5">
+<img src="memory6.jpg" alt="Memory 6">
 
-        <img src="https://drive.google.com/thumbnail?id=1THDePcVIOeDNImr89T1zz0Z3GMV2vHqV&sz=w1000"
-             alt="Memory 2">
+<!-- 7 নম্বর গান/লিংক সরানো হয়েছে -->
 
-        <img src="https://drive.google.com/thumbnail?id=19PHgg-erVKVKXGNE3lTHH37CoB9k-ZUV&sz=w1000"
-             alt="Memory 3">
+<img src="memory8.jpg" alt="Memory 8">
 
-        <img src="https://drive.google.com/thumbnail?id=1oRHaFqR82XBGJn94tN7kK2ox0d1rH8Dk&sz=w1000"
-             alt="Memory 4">
+</div>
 
-        <img src="https://drive.google.com/thumbnail?id=1TbMygQc1iZmZXIgEyY56L9MlHbO76Vxp&sz=w1000"
-             alt="Memory 5">
-
-        <img src="https://drive.google.com/thumbnail?id=1zA49-meZXTbnf8l6Twz4ocQSYHmcBjqv&sz=w1000"
-             alt="Memory 6">
-
-        <img src="https://drive.google.com/thumbnail?id=1e0AO70lY1H0-tPrNFpd6bFoxWXhEvTrd&sz=w1000"
-             alt="Memory 7">
-
-    </div>
-
-    <button class="next-btn" onclick="goTo(7)">
-        💌 Special Message
-    </button>
+<button class="next-btn" onclick="goTo(7)">
+💌 Continue
+</button>
 
 </div>
 </section>
 
 
-<!-- =====================================================
-     PAGE 7 MESSAGE
-===================================================== -->
+<!-- PAGE 7 MESSAGE -->
 
 <section class="page" id="page7">
-<div class="card message-card">
+<div class="card">
 
-    <h2>
-        Special Message 💌
-    </h2>
+<h2>💌 For You, Anika ❤️</h2>
 
-    <p class="message-sub">
-        জন্মদিন উপলক্ষে আমার মনের কিছু কথা...
-    </p>
+<div class="message">
 
-    <div class="message">
+প্রিয় Anika ❤️,
 
-আনিকা, শুরুতেই জানাই তোমায় জন্ম দিনের অনেক অনেক শুভেচ্ছা।
-তোমার প্রতিটি দিন হোক মঙ্গলময়। আগামীর ভবিষ্যত হোক উজ্জ্বল।
+আজকের এই বিশেষ দিনে তোমাকে শুধু একটা কথাই বলতে চাই—
+তুমি আমার কাছে সত্যিই অনেক special। 🥺❤️
 
-আজকের এই দিনে আমি তোমাকে কিছু কথা বলতে চাই। আমি জানি আমি তোমায় অনেক কষ্ট দিয়েছি। আমার জন্য তোমার চোখ থেকে ঝরেছে অজস্র অশ্রু। কিন্তু তুমি বিশ্বাস করো আমি ইচ্ছে করে তোমার সাথে এমন আচরণ করিনি। যা হয়েছে তা আমার অজানা বা অনিচ্ছাকৃত ভুল। যার জন্য আমি তোমার কাছে ক্ষমা প্রার্থী। আমি আমার হৃদয় থেকে কখনো এমন কোন কাজ করিনি যাতে তোমার মনে আঘাত লাগে। কারণ আমি তোমায় ভালোবাসি। কিন্তু তবুও অনেক সময় তোমার সাথে খারাপ আচরণ করেছি তার জন্য আমায় তুমি ক্ষমা করে দিও।
+তোমার সাথে কাটানো প্রতিটা মুহূর্ত আমার কাছে অনেক সুন্দর।
+হাসি, অভিমান, রাগ, ভালোবাসা—সবকিছু মিলিয়েই
+আমাদের গল্পটা এতটা সুন্দর। 💕
 
-সবশেষে বলতে চাই, আমি তোমায় ভালোবাসি এবং ভালোবাসবো। বিশ্বাস করে যখন হাতটা ধরেছো তখন এইটুকু বিশ্বাস করতে পারো যে মৃত্যুর আগ পর্যন্ত এ হাত ছাড়বো না।
+আমি চাই আমাদের এই সুন্দর সম্পর্কটা
+এভাবেই সবসময় ভালোবাসায় ভরে থাকুক।
 
-    </div>
+Happy Birthday, Anika! 🎂❤️
 
-    <div class="signature">
-        ইতি<br>
-        তোমার প্রিয়<br>
-        সাজিদ ❤️
-    </div>
+সবসময় হাসিখুশি থেকো।
+আর আমার পাশে থেকো। 🥰
 
-    <button class="next-btn" onclick="goTo(8)">
-        ❤️ One Last Thing
-    </button>
+<div class="signature">
+— তোমার Sajid ❤️
+</div>
+
+</div>
+
+<button class="next-btn" onclick="goTo(8)">
+❤️ Continue
+</button>
 
 </div>
 </section>
 
 
-<!-- =====================================================
-     PAGE 8 FINAL
-===================================================== -->
+<!-- PAGE 8 -->
 
 <section class="page" id="page8">
-<div class="card final-card">
+<div class="card">
 
-    <h2>
-        I Love You So Much ❤️
-    </h2>
+<h2>🥰 Happy Birthday Anika ❤️</h2>
 
-    <div class="kiss-hearts">
-        💕 💕 💕
-    </div>
+<div class="kiss-bears">
+🧸💕🧸
+</div>
 
-    <div class="kiss-bears">
-        🧸 🧸
-    </div>
+<div class="kiss-hearts">
+❤️ 💗 ❤️
+</div>
 
-    <div class="kiss-hearts">
-        💋 ❤️ 💋
-    </div>
+<p class="final-love">
+I Love You So Much ❤️
+</p>
 
-    <p class="final-love">
-        Happy Birthday, Anika! 🎂
-    </p>
-
-    <p style="margin-top:15px;">
-        তুমি আমার happiness,<br>
-        তুমি আমার favourite person,<br>
-        তুমি আমার ভালোবাসা। ❤️
-    </p>
-
-    <p style="margin-top:15px;color:#8b655c;">
-        Forever & Always ♾️❤️
-    </p>
+<p class="subtitle">
+আজকের দিনটা শুধু তোমার জন্য। 🎂🥰
+</p>
 
 </div>
 </section>
 
 
-<!-- =====================================================
-     AUDIO
-===================================================== -->
+<!-- MUSIC -->
 
-<audio id="birthdayMusic"
-       preload="auto"
-       loop>
-
-    <source
-      src="https://drive.google.com/uc?export=download&id=1e0AO70lY1H0-tPrNFpd6bFoxWXhEvTrd"
-      type="audio/mpeg">
-
+<audio
+id="birthdayMusic"
+preload="auto"
+playsinline>
+<source
+src="https://drive.google.com/uc?export=download&id=1e0AO70lY1H0-tPrNFpd6bFoxWXhEvTrd"
+type="audio/mpeg">
 </audio>
-
-</div>
 
 
 <script>
 
-/* =====================================================
-   SETTINGS
-===================================================== */
+const CORRECT_PASSWORD="16102025";
 
-const CORRECT_PASSWORD = "16102025";
+let passwordValue="";
+let currentPage=1;
 
-let currentPage = 1;
-let passwordValue = "";
-let musicStarted = false;
+let musicStarted=false;
 
-let balloonPopped = false;
+let balloonPopped=false;
 
-let microphoneStream = null;
-let audioContext = null;
-let analyser = null;
+let microphoneStream=null;
+let audioContext=null;
+let analyser=null;
 
 
-/* =====================================================
-   FLOATING HEARTS
-===================================================== */
+/* PAGE CONTROL */
 
-const heartsContainer =
-    document.getElementById("hearts");
+function goTo(page){
 
-const heartSymbols =
-    ["❤","💕","💗","💖","💘","♡"];
+    document.querySelectorAll(".page")
+    .forEach(p=>{
+        p.classList.remove("active");
+    });
 
-for(let i=0;i<30;i++){
+    const target=
+        document.getElementById("page"+page);
 
-    const heart =
-        document.createElement("div");
+    if(target){
+        target.classList.add("active");
+    }
 
-    heart.className="heart";
-
-    heart.innerHTML =
-        heartSymbols[
-            Math.floor(
-                Math.random()*heartSymbols.length
-            )
-        ];
-
-    heart.style.left =
-        Math.random()*100+"%";
-
-    heart.style.fontSize =
-        (10+Math.random()*20)+"px";
-
-    heart.style.animationDuration =
-        (7+Math.random()*8)+"s";
-
-    heart.style.animationDelay =
-        (-Math.random()*10)+"s";
-
-    heartsContainer.appendChild(heart);
-}
-
-
-/* =====================================================
-   PAGE NAVIGATION
-===================================================== */
-
-function goTo(pageNumber){
-
-    const oldPage =
-        document.getElementById(
-            "page"+currentPage
-        );
-
-    const newPage =
-        document.getElementById(
-            "page"+pageNumber
-        );
-
-    if(!newPage) return;
-
-    oldPage.classList.remove("active");
-
-    setTimeout(()=>{
-
-        newPage.classList.add("active");
-
-    },100);
-
-    currentPage=pageNumber;
-
-    createLoveTransition();
+    currentPage=page;
 
     /*
-       Cake page-এ গেলে গান 33 second থেকে শুরু
+       শুধু Cake Page-এ গান 33 sec
     */
 
-    if(pageNumber===5){
+    if(page===5){
 
-        const music =
-            document.getElementById(
-                "birthdayMusic"
-            );
+        setTimeout(()=>{
+
+            const music=
+                document.getElementById("birthdayMusic");
+
+            try{
+
+                music.currentTime=33;
+
+                music.play().catch(()=>{});
+
+            }catch(e){}
+
+            startBlowDetection();
+
+        },300);
+
+    }
+
+    /*
+       Cake থেকে বের হলে আবার 3 sec
+    */
+
+    if(page!==5 && page!==1 && page!==2 && page!==3 && page!==4){
+
+        const music=
+            document.getElementById("birthdayMusic");
 
         try{
 
-            music.currentTime=33;
+            music.currentTime=3;
 
             music.play().catch(()=>{});
 
@@ -1467,110 +958,10 @@ function goTo(pageNumber){
 }
 
 
-/* =====================================================
-   LAST OPTION YES
-===================================================== */
+/* PASSWORD */
 
-function lastOptionYes(){
-
-    launchConfetti();
-
-    const music =
-        document.getElementById(
-            "birthdayMusic"
-        );
-
-    try{
-
-        /*
-           Cake আসার সময় গান 33 sec থেকে
-        */
-
-        music.currentTime=33;
-
-        music.play().catch(()=>{});
-
-    }catch(e){}
-
-    setTimeout(()=>{
-
-        goTo(5);
-
-    },700);
-}
-
-
-/* =====================================================
-   ROMANTIC TRANSITION
-===================================================== */
-
-function createLoveTransition(){
-
-    for(let i=0;i<12;i++){
-
-        const heart =
-            document.createElement("div");
-
-        heart.innerHTML =
-            ["❤","💕","💗","✨"][
-                Math.floor(Math.random()*4)
-            ];
-
-        heart.style.position="fixed";
-        heart.style.left="50%";
-        heart.style.top="50%";
-        heart.style.zIndex="200";
-        heart.style.pointerEvents="none";
-        heart.style.fontSize=
-            (15+Math.random()*25)+"px";
-
-        const x =
-            (Math.random()-.5)*
-            window.innerWidth;
-
-        const y =
-            (Math.random()-.5)*
-            window.innerHeight;
-
-        heart.animate(
-            [
-                {
-                    transform:
-                    "translate(-50%,-50%) scale(.2)",
-                    opacity:1
-                },
-                {
-                    transform:
-                    `translate(
-                        calc(-50% + ${x}px),
-                        calc(-50% + ${y}px)
-                    ) scale(1.5)`,
-                    opacity:0
-                }
-            ],
-            {
-                duration:900,
-                easing:"ease-out"
-            }
-        );
-
-        document.body.appendChild(heart);
-
-        setTimeout(()=>{
-            heart.remove();
-        },1000);
-    }
-}
-
-
-/* =====================================================
-   PASSWORD
-===================================================== */
-
-const passInputs =
-    document.querySelectorAll(
-        "#passcode input"
-    );
+const passInputs=
+document.querySelectorAll("#passcode input");
 
 function pressKey(number){
 
@@ -1583,57 +974,45 @@ function pressKey(number){
 
     if(passwordValue.length===8){
 
-        setTimeout(
-            checkPassword,
-            250
-        );
+        setTimeout(checkPassword,250);
 
     }
 }
 
 function updatePasscode(){
 
-    passInputs.forEach(
-        (input,index)=>{
+    passInputs.forEach((input,index)=>{
 
-            input.value =
-                passwordValue[index] || "";
+        input.value=
+            passwordValue[index] || "";
 
-        }
-    );
+    });
 }
 
 function clearPass(){
 
-    passwordValue =
+    passwordValue=
         passwordValue.slice(0,-1);
 
     updatePasscode();
 
-    document.getElementById(
-        "passMessage"
-    ).textContent="";
+    document.getElementById("passMessage")
+    .textContent="";
 }
 
 function checkPassword(){
 
-    const teddy =
-        document.getElementById(
-            "loginTeddy"
-        );
+    const teddy=
+        document.getElementById("loginTeddy");
 
-    const message =
-        document.getElementById(
-            "passMessage"
-        );
+    const message=
+        document.getElementById("passMessage");
 
-    if(passwordValue===
-       CORRECT_PASSWORD){
+    if(passwordValue===CORRECT_PASSWORD){
 
         teddy.classList.remove("sad");
 
-        message.className=
-            "error success";
+        message.className="error success";
 
         message.textContent=
             "ঠিক হয়েছে! ❤️ দরজাটা খুলে গেল...";
@@ -1643,9 +1022,7 @@ function checkPassword(){
         startMusicFrom3Seconds();
 
         setTimeout(()=>{
-
             goTo(2);
-
         },1300);
 
     }else{
@@ -1655,33 +1032,24 @@ function checkPassword(){
         message.className="error";
 
         message.textContent=
-            "আহা! 🥺 পাসওয়ার্ডটি ভুল হয়েছে... আবার চেষ্টা করো।";
+            "আহা! 🥺 পাসওয়ার্ডটি ভুল হয়েছে...";
 
         setTimeout(()=>{
 
             passwordValue="";
-
             updatePasscode();
 
         },800);
-
     }
 }
 
 
-/* =====================================================
-   MUSIC
-===================================================== */
+/* MUSIC */
 
 function startMusicFrom3Seconds(){
 
-    const music =
-        document.getElementById(
-            "birthdayMusic"
-        );
-
-    if(musicStarted)
-        return;
+    const music=
+        document.getElementById("birthdayMusic");
 
     musicStarted=true;
 
@@ -1689,67 +1057,40 @@ function startMusicFrom3Seconds(){
 
         music.currentTime=3;
 
-        const playPromise =
-            music.play();
+        music.play().catch(()=>{
 
-        if(playPromise){
+            console.log(
+                "Browser autoplay blocked."
+            );
 
-            playPromise.catch(()=>{
+        });
 
-                console.log(
-                    "Browser autoplay blocked."
-                );
-
-            });
-
-        }
-
-    }catch(error){
-
-        console.log(error);
-
-    }
+    }catch(e){}
 }
 
 
-/* =====================================================
-   BALLOON
-===================================================== */
+/* BALLOON */
 
-const projectile =
-    document.getElementById(
-        "projectile"
-    );
+const projectile=
+document.getElementById("projectile");
 
-const balloon =
-    document.getElementById(
-        "balloon"
-    );
-
-const balloonArea =
-    document.getElementById(
-        "balloonArea"
-    );
-
-const rubber =
-    document.getElementById(
-        "rubber"
-    );
+const balloon=
+document.getElementById("balloon");
 
 let dragging=false;
 
 let startX=0;
 let startY=0;
 
-let projectileStartX=0;
-let projectileStartY=0;
+let projectileStartX=
+    projectile.offsetLeft;
+
+let projectileStartY=
+    projectile.offsetTop;
 
 function getPointer(e){
 
-    if(
-        e.touches &&
-        e.touches.length
-    ){
+    if(e.touches && e.touches.length){
 
         return{
             x:e.touches[0].clientX,
@@ -1764,7 +1105,9 @@ function getPointer(e){
     };
 }
 
-function startDrag(e){
+projectile.addEventListener(
+"pointerdown",
+e=>{
 
     if(balloonPopped)
         return;
@@ -1776,58 +1119,51 @@ function startDrag(e){
     startX=p.x;
     startY=p.y;
 
-    projectileStartX =
+    projectileStartX=
         projectile.offsetLeft;
 
-    projectileStartY =
+    projectileStartY=
         projectile.offsetTop;
 
     e.preventDefault();
-}
+});
 
-function dragMove(e){
+
+window.addEventListener(
+"pointermove",
+e=>{
 
     if(!dragging)
         return;
 
     const p=getPointer(e);
 
-    const dx=p.x-startX;
-    const dy=p.y-startY;
+    let dx=p.x-startX;
+    let dy=p.y-startY;
 
     const max=100;
 
-    const distance =
+    const distance=
         Math.sqrt(dx*dx+dy*dy);
 
-    const ratio =
-        distance>max
-        ?max/distance
-        :1;
+    if(distance>max){
 
-    const finalDx=dx*ratio;
-    const finalDy=dy*ratio;
+        dx=dx/distance*max;
+        dy=dy/distance*max;
 
-    projectile.style.left =
-        (projectileStartX+
-         finalDx)+"px";
+    }
 
-    projectile.style.top =
-        (projectileStartY+
-         finalDy)+"px";
+    projectile.style.left=
+        projectileStartX+dx+"px";
 
-    const angle =
-        Math.atan2(
-            finalDy,
-            finalDx
-        );
+    projectile.style.top=
+        projectileStartY+dy+"px";
+});
 
-    rubber.style.transform =
-        `rotate(${angle}rad)
-         scaleX(${1+distance/100})`;
-}
 
-function releaseDrag(e){
+window.addEventListener(
+"pointerup",
+e=>{
 
     if(!dragging)
         return;
@@ -1839,45 +1175,28 @@ function releaseDrag(e){
     const dx=p.x-startX;
     const dy=p.y-startY;
 
-    shootProjectile(dx,dy);
-}
-
-function shootProjectile(dx,dy){
-
-    if(balloonPopped)
-        return;
-
-    const distance =
+    const distance=
         Math.sqrt(dx*dx+dy*dy);
 
     if(distance<15){
 
-        projectile.style.left =
+        projectile.style.left=
             projectileStartX+"px";
 
-        projectile.style.top =
+        projectile.style.top=
             projectileStartY+"px";
 
         return;
     }
 
-    const directionX=-dx*7;
-    const directionY=-dy*7;
+    projectile.style.transition=
+        "left .7s ease,top .7s ease";
 
-    const oldLeft =
-        projectile.offsetLeft;
+    projectile.style.left=
+        projectileStartX-dx*7+"px";
 
-    const oldTop =
-        projectile.offsetTop;
-
-    projectile.style.transition =
-        "left .7s cubic-bezier(.15,.8,.25,1), top .7s cubic-bezier(.15,.8,.25,1)";
-
-    projectile.style.left =
-        (oldLeft+directionX)+"px";
-
-    projectile.style.top =
-        (oldTop+directionY)+"px";
+    projectile.style.top=
+        projectileStartY-dy*7+"px";
 
     setTimeout(()=>{
 
@@ -1887,32 +1206,24 @@ function shootProjectile(dx,dy){
 
         }else{
 
-            resetProjectile();
+            projectile.style.left=
+                projectileStartX+"px";
+
+            projectile.style.top=
+                projectileStartY+"px";
 
         }
 
     },650);
-}
 
-function resetProjectile(){
+});
 
-    projectile.style.transition =
-        "all .45s ease";
-
-    projectile.style.left =
-        projectileStartX+"px";
-
-    projectile.style.top =
-        projectileStartY+"px";
-}
 
 function popBalloon(){
 
     balloonPopped=true;
 
     balloon.classList.add("pop");
-
-    createParticles();
 
     projectile.style.opacity="0";
 
@@ -1923,113 +1234,36 @@ function popBalloon(){
     ).style.display="inline-block";
 }
 
-function createParticles(){
 
-    const container =
-        document.getElementById(
-            "particles"
-        );
-
-    const icons=[
-        "❤️","💕","✨",
-        "💗","🎉","⭐","💖"
-    ];
-
-    for(let i=0;i<22;i++){
-
-        const p =
-            document.createElement("div");
-
-        p.className="particle";
-
-        p.innerHTML =
-            icons[
-                Math.floor(
-                    Math.random()*icons.length
-                )
-            ];
-
-        p.style.left =
-            (48+Math.random()*10)+"%";
-
-        p.style.top =
-            (22+Math.random()*20)+"%";
-
-        p.style.setProperty(
-            "--x",
-            ((Math.random()-.5)*300)+"px"
-        );
-
-        p.style.setProperty(
-            "--y",
-            ((Math.random()-.5)*250)+"px"
-        );
-
-        container.appendChild(p);
-
-        setTimeout(()=>{
-            p.remove();
-        },1000);
-    }
-}
-
-projectile.addEventListener(
-    "pointerdown",
-    startDrag
-);
-
-window.addEventListener(
-    "pointermove",
-    dragMove
-);
-
-window.addEventListener(
-    "pointerup",
-    releaseDrag
-);
-
-
-/* =====================================================
-   LOVE QUESTION
-===================================================== */
+/* LOVE */
 
 function loveYes(){
 
-    const result =
-        document.getElementById(
-            "loveResult"
-        );
+    document.getElementById(
+        "loveResult"
+    ).innerHTML=`
 
-    result.innerHTML=`
+    <div style="
+    font-size:40px;
+    margin-top:20px;">
+    🥰💗🎉
+    </div>
 
-        <div style="
-        font-size:40px;
-        margin-top:20px;
-        animation:bounceBear 1s infinite;">
-        🥰💗🎉
-        </div>
+    <p style="
+    color:#e85d77;
+    font-weight:700;">
+    আমি জানতাম! ❤️
+    </p>
 
-        <p style="
-        color:#e85d77;
-        font-weight:700;
-        margin-top:10px;">
-        আমি জানতাম! ❤️
-        </p>
     `;
 
     launchConfetti();
 
-    /*
-       এখন সরাসরি Cake যাবে না।
-       আগে Last Option আসবে।
-    */
-
     setTimeout(()=>{
-
         goTo(4);
-
     },1800);
 }
+
 
 function loveNo(){
 
@@ -2045,49 +1279,67 @@ function loveNo(){
         "loveResult"
     ).innerHTML=`
 
-        <p style="
-        color:#d9576e;
-        margin-top:10px;">
-        তুমি না বললে আমার teddy তো কাঁদবেই... 😭💔
-        </p>
+    <p style="
+    color:#d9576e;
+    margin-top:10px;">
+    তুমি না বললে আমার teddy তো কাঁদবেই... 😭💔
+    </p>
+
     `;
 
     setTimeout(()=>{
-
         goTo(4);
-
     },2200);
 }
 
 
-/* =====================================================
-   CAKE
-===================================================== */
+/* LAST OPTION */
+
+function lastOptionYes(){
+
+    launchConfetti();
+
+    goTo(5);
+
+}
+
+
+/* CAKE */
 
 function blowCandles(){
 
-    const candles =
-        document.querySelectorAll(
-            ".candle"
-        );
+    const candles=
+        document.querySelectorAll(".candle");
 
-    candles.forEach(
-        (candle,index)=>{
+    candles.forEach((candle,index)=>{
 
-            setTimeout(()=>{
+        setTimeout(()=>{
 
-                candle.classList.add(
-                    "off"
-                );
+            candle.classList.add("off");
 
-            },index*200);
+        },index*200);
 
-        }
-    );
+    });
 
     launchConfetti();
 
     setTimeout(()=>{
+
+        stopMicrophone();
+
+        /*
+           Cake শেষ হলে গান 3 sec
+        */
+
+        const music=
+            document.getElementById("birthdayMusic");
+
+        try{
+
+            music.currentTime=3;
+            music.play().catch(()=>{});
+
+        }catch(e){}
 
         goTo(6);
 
@@ -2095,16 +1347,12 @@ function blowCandles(){
 }
 
 
-/* =====================================================
-   MICROPHONE BLOW
-===================================================== */
+/* MICROPHONE */
 
 async function startBlowDetection(){
 
-    const status =
-        document.getElementById(
-            "micStatus"
-        );
+    const status=
+        document.getElementById("micStatus");
 
     if(
         !navigator.mediaDevices ||
@@ -2112,30 +1360,30 @@ async function startBlowDetection(){
     ){
 
         status.textContent=
-            "এই browser-এ microphone support নেই। নিচের মোমবাতি নিভাও button ব্যবহার করো।";
+            "এই browser-এ microphone support নেই।";
 
         return;
     }
 
     try{
 
-        microphoneStream =
+        microphoneStream=
             await navigator.mediaDevices.getUserMedia({
                 audio:true
             });
 
-        audioContext =
+        audioContext=
             new(
                 window.AudioContext ||
                 window.webkitAudioContext
             )();
 
-        const source =
+        const source=
             audioContext.createMediaStreamSource(
                 microphoneStream
             );
 
-        analyser =
+        analyser=
             audioContext.createAnalyser();
 
         analyser.fftSize=512;
@@ -2150,68 +1398,80 @@ async function startBlowDetection(){
     }catch(error){
 
         status.textContent=
-            "Microphone permission পাওয়া যায়নি। Button দিয়ে মোমবাতি নিভিয়ে দাও ❤️";
+            "Microphone permission দেওয়া হয়নি।";
 
     }
 }
 
+
 function detectBlow(){
 
-    if(!analyser)
+    if(!analyser || currentPage!==5)
         return;
 
-    const data =
+    const data=
         new Uint8Array(
             analyser.fftSize
         );
 
-    analyser.getByteTimeDomainData(
-        data
-    );
+    analyser.getByteTimeDomainData(data);
 
     let sum=0;
 
-    for(
-        let i=0;
-        i<data.length;
-        i++
-    ){
+    for(let i=0;i<data.length;i++){
 
-        const value =
+        const value=
             (data[i]-128)/128;
 
         sum+=value*value;
+
     }
 
-    const rms =
-        Math.sqrt(
-            sum/data.length
-        );
+    const rms=
+        Math.sqrt(sum/data.length);
 
     if(rms>.17){
 
-        if(currentPage===5){
+        document.getElementById(
+            "micStatus"
+        ).textContent=
+            "🌬️ ফুঁ লাগলো! মোমবাতি নিভে গেল ❤️";
 
-            document.getElementById(
-                "micStatus"
-            ).textContent=
-                "🌬️ ফুঁ লাগলো! মোমবাতি নিভে গেল ❤️";
+        blowCandles();
 
-            blowCandles();
-
-            return;
-        }
+        return;
     }
 
-    requestAnimationFrame(
-        detectBlow
-    );
+    requestAnimationFrame(detectBlow);
 }
 
 
-/* =====================================================
-   CONFETTI
-===================================================== */
+function stopMicrophone(){
+
+    if(microphoneStream){
+
+        microphoneStream
+        .getTracks()
+        .forEach(track=>{
+            track.stop();
+        });
+
+        microphoneStream=null;
+    }
+
+    if(audioContext){
+
+        audioContext.close()
+        .catch(()=>{});
+
+        audioContext=null;
+    }
+
+    analyser=null;
+}
+
+
+/* CONFETTI */
 
 function launchConfetti(){
 
@@ -2226,95 +1486,120 @@ function launchConfetti(){
 
     for(let i=0;i<70;i++){
 
-        const piece =
-            document.createElement(
-                "div"
-            );
+        const piece=
+            document.createElement("div");
 
         piece.className="confetti";
 
-        piece.style.left =
+        piece.style.left=
             Math.random()*100+"vw";
 
-        piece.style.background =
+        piece.style.background=
             colors[
                 Math.floor(
                     Math.random()*colors.length
                 )
             ];
 
-        piece.style.transform =
-            `rotate(
-                ${Math.random()*360}deg
-            )`;
-
-        piece.style.animationDelay =
+        piece.style.animationDelay=
             Math.random()*.5+"s";
 
-        piece.style.animationDuration =
-            (1.8+Math.random()*1.8)+"s";
-
-        document.body.appendChild(
-            piece
-        );
+        document.body.appendChild(piece);
 
         setTimeout(()=>{
-
             piece.remove();
-
         },4000);
     }
 }
 
 
-/* =====================================================
-   IMAGE FALLBACK
-===================================================== */
+/* FLOATING HEARTS */
 
-document
-.querySelectorAll(
-    ".gallery-grid img"
-)
-.forEach(img=>{
+function createHearts(){
+
+    const container=
+        document.getElementById("hearts");
+
+    for(let i=0;i<18;i++){
+
+        const heart=
+            document.createElement("div");
+
+        heart.className="heart";
+        heart.innerHTML="❤";
+
+        heart.style.left=
+            Math.random()*100+"%";
+
+        heart.style.fontSize=
+            (12+Math.random()*20)+"px";
+
+        heart.style.animationDuration=
+            (5+Math.random()*6)+"s";
+
+        heart.style.animationDelay=
+            Math.random()*5+"s";
+
+        container.appendChild(heart);
+    }
+}
+
+
+/* KEYBOARD */
+
+document.addEventListener(
+"keydown",
+e=>{
+
+    if(currentPage!==1)
+        return;
+
+    if(/^[0-9]$/.test(e.key))
+        pressKey(e.key);
+
+    if(e.key==="Backspace")
+        clearPass();
+
+    if(e.key==="Enter")
+        checkPassword();
+
+});
+
+
+/* IMAGE FALLBACK */
+
+document.querySelectorAll(
+".gallery-grid img"
+).forEach(img=>{
 
     img.addEventListener(
         "error",
         ()=>{
 
-            img.style.objectFit=
-                "contain";
+            img.style.objectFit="contain";
 
             img.src=
-                "data:image/svg+xml;charset=UTF-8,"+
-                encodeURIComponent(`
+            "data:image/svg+xml;charset=UTF-8,"+
+            encodeURIComponent(`
 
-                <svg xmlns="http://www.w3.org/2000/svg"
-                     width="500"
-                     height="500">
+            <svg xmlns="http://www.w3.org/2000/svg"
+                 width="500"
+                 height="500">
 
-                    <rect width="100%"
-                          height="100%"
-                          fill="#fff0e6"/>
+            <rect width="100%"
+                  height="100%"
+                  fill="#fff0e6"/>
 
-                    <text x="50%"
-                          y="47%"
-                          text-anchor="middle"
-                          font-family="Arial"
-                          font-size="25"
-                          fill="#b77b70">
-                        ❤️
-                    </text>
+            <text x="50%"
+                  y="50%"
+                  text-anchor="middle"
+                  font-size="40"
+                  fill="#b77b70">
+            ❤️ Photo
+            </text>
 
-                    <text x="50%"
-                          y="57%"
-                          text-anchor="middle"
-                          font-family="Arial"
-                          font-size="15"
-                          fill="#b77b70">
-                        Photo
-                    </text>
+            </svg>
 
-                </svg>
             `);
 
         }
@@ -2322,46 +1607,11 @@ document
 });
 
 
-/* =====================================================
-   KEYBOARD
-===================================================== */
-
-document.addEventListener(
-    "keydown",
-    (e)=>{
-
-        if(currentPage!==1)
-            return;
-
-        if(/^[0-9]$/.test(e.key)){
-
-            pressKey(e.key);
-
-        }
-
-        if(e.key==="Backspace"){
-
-            clearPass();
-
-        }
-
-        if(e.key==="Enter"){
-
-            checkPassword();
-
-        }
-
-    }
-);
-
-
-/* =====================================================
-   INITIAL
-===================================================== */
-
 updatePasscode();
+createHearts();
 
 </script>
 
+</div>
 </body>
 </html>
