@@ -1,0 +1,2367 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Anika ❤️ | Happy Birthday</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+:root{
+    --pink:#ff7f9f;
+    --dark:#4a2724;
+    --cream:#fff4df;
+    --peach:#ffd8c8;
+    --red:#ef526d;
+    --gold:#ffd66b;
+}
+
+html,body{
+    width:100%;
+    min-height:100%;
+}
+
+body{
+    font-family:'Poppins','Baloo 2',sans-serif;
+    background:
+      radial-gradient(circle at 10% 10%,#fff 0 3px,transparent 4px),
+      linear-gradient(135deg,#fff0d4,#ffd8c8 45%,#ffe9d7);
+    color:var(--dark);
+    overflow:hidden;
+}
+
+#app{
+    width:100vw;
+    height:100vh;
+    position:relative;
+    overflow:hidden;
+}
+
+.page{
+    position:absolute;
+    inset:0;
+    width:100%;
+    height:100%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:20px;
+    opacity:0;
+    visibility:hidden;
+    transform:scale(.96) translateY(20px);
+    transition:
+        opacity .7s ease,
+        transform .7s cubic-bezier(.2,.8,.2,1),
+        visibility .7s;
+    overflow-y:auto;
+}
+
+.page.active{
+    opacity:1;
+    visibility:visible;
+    transform:scale(1) translateY(0);
+    z-index:5;
+}
+
+.card{
+    width:min(94vw,520px);
+    max-height:94vh;
+    overflow:auto;
+    background:rgba(255,255,255,.92);
+    border-radius:28px;
+    padding:28px;
+    box-shadow:
+      0 20px 60px rgba(109,55,48,.18),
+      inset 0 0 0 1px rgba(255,255,255,.8);
+    text-align:center;
+    position:relative;
+}
+
+.card::-webkit-scrollbar{
+    width:5px;
+}
+
+.card::-webkit-scrollbar-thumb{
+    background:#f4a6aa;
+    border-radius:20px;
+}
+
+h1,h2,h3{
+    font-family:'Baloo 2',sans-serif;
+}
+
+h1{
+    font-size:clamp(30px,7vw,48px);
+    line-height:1;
+}
+
+h2{
+    font-size:clamp(26px,6vw,38px);
+}
+
+p{
+    line-height:1.7;
+}
+
+button{
+    border:0;
+    font-family:inherit;
+    cursor:pointer;
+}
+
+.next-btn{
+    margin-top:20px;
+    padding:13px 26px;
+    border-radius:50px;
+    background:linear-gradient(135deg,#ff789a,#ef526d);
+    color:#fff;
+    font-size:16px;
+    font-weight:700;
+    box-shadow:0 8px 20px rgba(239,82,109,.25);
+    transition:.25s;
+}
+
+.next-btn:hover{
+    transform:translateY(-3px) scale(1.03);
+}
+
+.hearts{
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    overflow:hidden;
+    z-index:0;
+}
+
+.heart{
+    position:absolute;
+    bottom:-50px;
+    color:#ff789a;
+    animation:floatHeart linear infinite;
+    opacity:.65;
+}
+
+@keyframes floatHeart{
+    0%{
+        transform:translateY(0) rotate(0deg) scale(.8);
+        opacity:0;
+    }
+    15%{opacity:.65;}
+    100%{
+        transform:translateY(-110vh) rotate(360deg) scale(1.2);
+        opacity:0;
+    }
+}
+
+/* =========================
+   PAGE 1 PASSWORD
+========================= */
+
+.lock-icon{
+    font-size:48px;
+    margin-bottom:5px;
+}
+
+.teddy{
+    position:relative;
+    width:180px;
+    height:190px;
+    margin:8px auto 10px;
+    animation:teddyHappy 1.5s ease-in-out infinite;
+}
+
+.teddy .ear{
+    position:absolute;
+    width:55px;
+    height:55px;
+    border-radius:50%;
+    background:#b98255;
+    top:15px;
+    z-index:0;
+    box-shadow:inset 0 0 0 7px #d49b6c;
+}
+
+.teddy .ear.left{left:23px;}
+.teddy .ear.right{right:23px;}
+
+.teddy .head{
+    position:absolute;
+    width:125px;
+    height:110px;
+    background:#c58b5b;
+    border-radius:48% 48% 45% 45%;
+    left:27px;
+    top:27px;
+    z-index:1;
+}
+
+.teddy .muzzle{
+    position:absolute;
+    width:65px;
+    height:47px;
+    background:#e2b27d;
+    border-radius:50%;
+    left:30px;
+    top:48px;
+}
+
+.eye{
+    position:absolute;
+    width:9px;
+    height:12px;
+    background:#3b2620;
+    border-radius:50%;
+    top:42px;
+}
+
+.eye.l{left:28px;}
+.eye.r{right:28px;}
+
+.nose{
+    position:absolute;
+    width:13px;
+    height:10px;
+    border-radius:50%;
+    background:#39221e;
+    left:56px;
+    top:64px;
+}
+
+.mouth{
+    position:absolute;
+    width:18px;
+    height:10px;
+    border-bottom:3px solid #39221e;
+    border-radius:50%;
+    left:53px;
+    top:72px;
+}
+
+.teddy .body{
+    position:absolute;
+    width:95px;
+    height:90px;
+    background:#c58b5b;
+    border-radius:45% 45% 35% 35%;
+    left:42px;
+    top:112px;
+}
+
+.arm{
+    position:absolute;
+    width:28px;
+    height:68px;
+    background:#c58b5b;
+    border-radius:30px;
+    top:120px;
+}
+
+.arm.l{
+    left:24px;
+    transform:rotate(35deg);
+}
+
+.arm.r{
+    right:24px;
+    transform:rotate(-35deg);
+}
+
+@keyframes teddyHappy{
+    0%,100%{transform:translateY(0) rotate(0);}
+    25%{transform:translateY(-16px) rotate(-4deg);}
+    50%{transform:translateY(-24px) rotate(4deg);}
+    75%{transform:translateY(-12px) rotate(-3deg);}
+}
+
+.teddy.sad{
+    animation:teddySad .8s ease-in-out infinite;
+}
+
+.teddy.sad .mouth{
+    border-bottom:0;
+    border-top:3px solid #39221e;
+    top:77px;
+}
+
+@keyframes teddySad{
+    0%,100%{transform:translateX(0);}
+    25%{transform:translateX(-7px) rotate(-3deg);}
+    75%{transform:translateX(7px) rotate(3deg);}
+}
+
+.subtitle{
+    color:#8a5d56;
+    font-size:13px;
+    margin:5px 0 16px;
+}
+
+.passcode{
+    display:flex;
+    justify-content:center;
+    gap:7px;
+    margin:15px 0;
+}
+
+.passcode input{
+    width:38px;
+    height:46px;
+    border:2px solid #f4d59e;
+    background:#fff8e9;
+    border-radius:10px;
+    text-align:center;
+    font-size:21px;
+    font-weight:700;
+    color:#57362f;
+    outline:none;
+}
+
+.keypad{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:8px;
+    margin-top:15px;
+}
+
+.key{
+    padding:10px;
+    border-radius:12px;
+    background:#fff;
+    border:1px solid #ecc9b4;
+    color:#52332e;
+    font-size:20px;
+    font-weight:600;
+    box-shadow:0 4px 8px rgba(0,0,0,.04);
+    transition:.2s;
+}
+
+.key:hover{
+    transform:translateY(-2px);
+    background:#fff3e7;
+}
+
+.error{
+    min-height:25px;
+    color:#e34c61;
+    font-size:13px;
+    font-weight:600;
+}
+
+.success{
+    color:#2f9b63;
+    font-weight:700;
+}
+
+.date-note{
+    margin-top:16px;
+    padding:12px 15px;
+    border-radius:16px;
+    background:#fff5e3;
+    border:1px dashed #efbd88;
+    font-size:12px;
+}
+
+/* =========================
+   PAGE 2 BALLOON
+========================= */
+
+.game-title{
+    margin-bottom:4px;
+}
+
+.balloon-area{
+    height:390px;
+    position:relative;
+    margin-top:10px;
+    overflow:hidden;
+    border-radius:25px;
+    background:linear-gradient(#dff7ff,#fff2e1);
+    border:2px solid #f2d3bf;
+}
+
+.balloon{
+    position:absolute;
+    width:90px;
+    height:115px;
+    border-radius:50% 50% 45% 45%;
+    background:radial-gradient(circle at 32% 25%,#fff 0 7%,transparent 8%),
+               linear-gradient(135deg,#ff8fa9,#ed5471);
+    top:35px;
+    right:28%;
+    box-shadow:inset -8px -10px 0 rgba(160,32,65,.1);
+    transition:.3s;
+}
+
+.balloon:before{
+    content:"";
+    position:absolute;
+    width:14px;
+    height:14px;
+    background:#ed5471;
+    bottom:-7px;
+    left:38px;
+    transform:rotate(45deg);
+}
+
+.balloon:after{
+    content:"";
+    position:absolute;
+    width:2px;
+    height:130px;
+    background:#7f6963;
+    top:110px;
+    left:45px;
+}
+
+.balloon.pop{
+    animation:balloonPop .55s forwards;
+}
+
+@keyframes balloonPop{
+    0%{transform:scale(1);}
+    45%{transform:scale(1.25);}
+    100%{transform:scale(0);opacity:0;}
+}
+
+.pop-particles{
+    position:absolute;
+    inset:0;
+    pointer-events:none;
+}
+
+.particle{
+    position:absolute;
+    font-size:22px;
+    animation:particle .9s forwards;
+}
+
+@keyframes particle{
+    from{
+        transform:translate(0,0) scale(.5) rotate(0);
+        opacity:1;
+    }
+    to{
+        transform:translate(var(--x),var(--y)) scale(1.3) rotate(300deg);
+        opacity:0;
+    }
+}
+
+.slingshot{
+    position:absolute;
+    bottom:25px;
+    left:50%;
+    width:90px;
+    height:110px;
+    transform:translateX(-50%);
+}
+
+.slingshot-stick{
+    position:absolute;
+    width:14px;
+    height:100px;
+    background:#9b643b;
+    left:38px;
+    bottom:0;
+    border-radius:10px;
+    transform:rotate(5deg);
+}
+
+.slingshot-stick:before,
+.slingshot-stick:after{
+    content:"";
+    position:absolute;
+    width:14px;
+    height:55px;
+    background:#9b643b;
+    top:-34px;
+    border-radius:10px;
+}
+
+.slingshot-stick:before{
+    transform:rotate(-27deg);
+    left:-22px;
+}
+
+.slingshot-stick:after{
+    transform:rotate(27deg);
+    left:22px;
+}
+
+.rubber{
+    position:absolute;
+    width:55px;
+    height:2px;
+    background:#51322d;
+    top:9px;
+    left:18px;
+}
+
+.projectile{
+    position:absolute;
+    left:calc(50% - 13px);
+    bottom:105px;
+    width:27px;
+    height:27px;
+    border-radius:50%;
+    background:#ff6f91;
+    box-shadow:0 3px 10px rgba(0,0,0,.2);
+    cursor:grab;
+    touch-action:none;
+    z-index:5;
+}
+
+.projectile:after{
+    content:"❤️";
+    position:absolute;
+    font-size:14px;
+    left:4px;
+    top:2px;
+}
+
+.instruction{
+    font-size:12px;
+    color:#8b6961;
+    margin-top:8px;
+}
+
+/* =========================
+   PAGE 3 LOVE
+========================= */
+
+.love-teddy{
+    margin:0 auto 15px;
+    width:180px;
+}
+
+.bear-small{
+    font-size:72px;
+    animation:bounceBear 1.4s infinite;
+}
+
+@keyframes bounceBear{
+    0%,100%{transform:translateY(0);}
+    50%{transform:translateY(-12px) rotate(4deg);}
+}
+
+.question{
+    font-size:26px;
+    font-weight:700;
+    color:#55332e;
+}
+
+.love-buttons{
+    position:relative;
+    min-height:100px;
+    display:flex;
+    justify-content:center;
+    gap:15px;
+    align-items:center;
+    margin-top:20px;
+}
+
+.yes-btn,.no-btn{
+    padding:12px 30px;
+    border-radius:50px;
+    font-weight:700;
+    font-size:16px;
+}
+
+.yes-btn{
+    background:#ff6f91;
+    color:white;
+}
+
+.no-btn{
+    background:#fff;
+    border:1px solid #e7b6aa;
+    color:#754c45;
+}
+
+.cry{
+    display:none;
+    font-size:55px;
+    animation:cry .8s infinite;
+}
+
+@keyframes cry{
+    0%,100%{transform:translateY(0);}
+    50%{transform:translateY(7px);}
+}
+
+/* =========================
+   PAGE 4 LAST OPTION
+========================= */
+
+.last-option-card{
+    background:rgba(255,250,247,.95);
+}
+
+.last-heart{
+    font-size:90px;
+    margin:10px 0;
+    animation:lastHeart 1.2s infinite;
+}
+
+@keyframes lastHeart{
+    0%,100%{
+        transform:scale(1);
+    }
+    50%{
+        transform:scale(1.15);
+    }
+}
+
+.last-question{
+    font-size:24px;
+    font-weight:700;
+    color:#55332e;
+    margin-top:10px;
+}
+
+.last-text{
+    color:#8a5d56;
+    font-size:14px;
+    line-height:1.8;
+    margin-top:8px;
+}
+
+.last-yes{
+    display:inline-block;
+    margin-top:25px;
+    padding:15px 45px;
+    border-radius:50px;
+    background:linear-gradient(135deg,#ff789a,#ef526d);
+    color:white;
+    font-size:18px;
+    font-weight:700;
+    box-shadow:0 10px 25px rgba(239,82,109,.3);
+    animation:yesPulse 1.5s infinite;
+}
+
+@keyframes yesPulse{
+    0%,100%{
+        transform:scale(1);
+    }
+    50%{
+        transform:scale(1.06);
+    }
+}
+
+/* =========================
+   PAGE 5 CAKE
+========================= */
+
+.cake-card{
+    background:rgba(255,250,244,.95);
+}
+
+.cake{
+    position:relative;
+    width:260px;
+    height:270px;
+    margin:15px auto;
+}
+
+.plate{
+    position:absolute;
+    width:280px;
+    height:20px;
+    background:#cba18a;
+    border-radius:50%;
+    bottom:12px;
+    left:-10px;
+}
+
+.layer{
+    position:absolute;
+    left:30px;
+    width:200px;
+    border-radius:14px 14px 25px 25px;
+    box-shadow:inset 0 -8px 0 rgba(0,0,0,.07);
+}
+
+.layer.bottom{
+    height:65px;
+    bottom:28px;
+    background:#d98968;
+}
+
+.layer.mid{
+    height:55px;
+    bottom:83px;
+    left:45px;
+    width:170px;
+    background:#f0aa83;
+}
+
+.layer.top{
+    height:48px;
+    bottom:132px;
+    left:58px;
+    width:145px;
+    background:#ffd1ae;
+}
+
+.frost{
+    position:absolute;
+    width:100%;
+    height:18px;
+    background:#fff8e9;
+    border-radius:50%;
+    top:-7px;
+}
+
+.candle{
+    position:absolute;
+    width:13px;
+    height:65px;
+    bottom:174px;
+    background:repeating-linear-gradient(
+      45deg,
+      #fff 0 6px,
+      #ef6c83 6px 12px
+    );
+    border-radius:5px;
+}
+
+.c1{left:88px;}
+.c2{left:122px;}
+.c3{left:156px;}
+
+.flame{
+    position:absolute;
+    width:18px;
+    height:28px;
+    background:#ffb329;
+    border-radius:50% 50% 50% 0;
+    transform:rotate(-45deg);
+    top:-28px;
+    left:-3px;
+    box-shadow:0 0 15px #ff9d00;
+    animation:flame 0.7s infinite alternate;
+}
+
+@keyframes flame{
+    from{transform:rotate(-45deg) scale(.9);}
+    to{transform:rotate(-40deg) scale(1.1);}
+}
+
+.candle.off .flame{
+    display:none;
+}
+
+.birthday-text{
+    color:#df6375;
+    font-weight:600;
+    margin-bottom:10px;
+}
+
+.mic-status{
+    font-size:12px;
+    color:#7c625a;
+    margin-top:10px;
+}
+
+/* =========================
+   GALLERY PAGE 6
+========================= */
+
+.gallery-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:12px;
+    margin-top:18px;
+}
+
+.gallery-grid img{
+    width:100%;
+    aspect-ratio:1/1;
+    object-fit:cover;
+    border-radius:18px;
+    border:4px solid white;
+    box-shadow:0 7px 15px rgba(0,0,0,.1);
+    background:#f4e6d9;
+    transition:.3s;
+}
+
+.gallery-grid img:hover{
+    transform:scale(1.03) rotate(1deg);
+}
+
+.gallery-grid img:nth-child(2n){
+    border-color:#ffc2c8;
+}
+
+.gallery-grid img:nth-child(3n){
+    border-color:#c8e3d4;
+}
+
+/* =========================
+   MESSAGE PAGE 7
+========================= */
+
+.message-card{
+    text-align:left;
+}
+
+.message-card h2,
+.message-card .message-sub{
+    text-align:center;
+}
+
+.message{
+    margin-top:18px;
+    background:#fffaf1;
+    border:2px solid #f2d4ad;
+    border-radius:20px;
+    padding:20px;
+    font-size:14px;
+    line-height:2;
+    white-space:pre-line;
+}
+
+.signature{
+    text-align:right;
+    font-weight:700;
+    color:#d95c72;
+    margin-top:14px;
+}
+
+/* =========================
+   FINAL PAGE 8
+========================= */
+
+.final-card{
+    background:rgba(255,250,247,.94);
+}
+
+.kiss-bears{
+    font-size:110px;
+    letter-spacing:-30px;
+    margin:15px 0;
+    animation:kiss .9s infinite alternate;
+}
+
+@keyframes kiss{
+    from{transform:translateY(0);}
+    to{transform:translateY(-9px) scale(1.04);}
+}
+
+.kiss-hearts{
+    font-size:30px;
+    margin-top:-20px;
+    animation:heartPulse 1s infinite;
+}
+
+@keyframes heartPulse{
+    50%{transform:scale(1.2);}
+}
+
+.final-love{
+    color:#ed5575;
+    font-size:30px;
+    font-weight:700;
+}
+
+/* =========================
+   CONFETTI
+========================= */
+
+.confetti{
+    position:fixed;
+    top:-20px;
+    width:9px;
+    height:16px;
+    z-index:100;
+    animation:confettiFall 2.4s linear forwards;
+}
+
+@keyframes confettiFall{
+    to{
+        transform:translateY(110vh) rotate(720deg);
+        opacity:0;
+    }
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:430px){
+
+    .card{
+        padding:20px 15px;
+        border-radius:24px;
+    }
+
+    .passcode{
+        gap:4px;
+    }
+
+    .passcode input{
+        width:34px;
+        height:42px;
+    }
+
+    .balloon-area{
+        height:350px;
+    }
+
+    .gallery-grid{
+        gap:8px;
+    }
+
+    .message{
+        font-size:13px;
+        line-height:1.9;
+        padding:15px;
+    }
+
+    .last-heart{
+        font-size:75px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div id="app">
+
+<div class="hearts" id="hearts"></div>
+
+<!-- =====================================================
+     PAGE 1 PASSWORD
+===================================================== -->
+
+<section class="page active" id="page1">
+<div class="card">
+
+    <div class="lock-icon">🔒</div>
+
+    <h1>Locked</h1>
+
+    <div class="teddy" id="loginTeddy">
+
+        <div class="ear left"></div>
+        <div class="ear right"></div>
+
+        <div class="head">
+            <div class="eye l"></div>
+            <div class="eye r"></div>
+            <div class="muzzle"></div>
+            <div class="nose"></div>
+            <div class="mouth"></div>
+        </div>
+
+        <div class="body"></div>
+        <div class="arm l"></div>
+        <div class="arm r"></div>
+
+    </div>
+
+    <h3>Enter the 8-digit passcode</h3>
+
+    <div class="subtitle">
+        আমাদের সম্পর্কের প্রথম দিন ❤️
+    </div>
+
+    <div class="passcode" id="passcode">
+
+        <input maxlength="1" readonly>
+        <input maxlength="1" readonly>
+        <input maxlength="1" readonly>
+        <input maxlength="1" readonly>
+        <input maxlength="1" readonly>
+        <input maxlength="1" readonly>
+        <input maxlength="1" readonly>
+        <input maxlength="1" readonly>
+
+    </div>
+
+    <div class="keypad">
+
+        <button class="key" onclick="pressKey('1')">1</button>
+        <button class="key" onclick="pressKey('2')">2</button>
+        <button class="key" onclick="pressKey('3')">3</button>
+
+        <button class="key" onclick="pressKey('4')">4</button>
+        <button class="key" onclick="pressKey('5')">5</button>
+        <button class="key" onclick="pressKey('6')">6</button>
+
+        <button class="key" onclick="pressKey('7')">7</button>
+        <button class="key" onclick="pressKey('8')">8</button>
+        <button class="key" onclick="pressKey('9')">9</button>
+
+        <button class="key" onclick="clearPass()">⌫</button>
+        <button class="key" onclick="pressKey('0')">0</button>
+        <button class="key" onclick="checkPassword()">✓</button>
+
+    </div>
+
+    <div class="error" id="passMessage"></div>
+
+    <div class="date-note">
+        💗 ছোট্ট একটা কথা...<br>
+        <b>পাসওয়ার্ডটি হচ্ছে আমাদের রিলেশনের প্রথম দিন।</b>
+    </div>
+
+</div>
+</section>
+
+
+<!-- =====================================================
+     PAGE 2 BALLOON
+===================================================== -->
+
+<section class="page" id="page2">
+<div class="card">
+
+    <h2 class="game-title">🎈 Pop The Balloon 🎈</h2>
+
+    <p class="subtitle">
+        ভালোবাসা দিয়ে টেনে ছেড়ে দাও... ❤️
+    </p>
+
+    <div class="balloon-area" id="balloonArea">
+
+        <div class="balloon" id="balloon"></div>
+
+        <div class="pop-particles" id="particles"></div>
+
+        <div class="slingshot">
+            <div class="slingshot-stick"></div>
+            <div class="rubber" id="rubber"></div>
+        </div>
+
+        <div class="projectile" id="projectile"></div>
+
+    </div>
+
+    <p class="instruction">
+        ❤️ গোলাপি বলটাকে ধরে পিছনে টেনে ছেড়ে দাও
+    </p>
+
+    <button class="next-btn"
+            id="balloonNext"
+            style="display:none"
+            onclick="goTo(3)">
+        💕 Continue
+    </button>
+
+</div>
+</section>
+
+
+<!-- =====================================================
+     PAGE 3 LOVE QUESTION
+===================================================== -->
+
+<section class="page" id="page3">
+<div class="card">
+
+    <div class="love-teddy">
+        <div class="bear-small">🧸</div>
+    </div>
+
+    <div class="kiss-hearts">
+        💕 💗 💕
+    </div>
+
+    <div class="question">
+        Do You Love Me? 🥺❤️
+    </div>
+
+    <p class="subtitle">
+        সত্যি করে উত্তর দাও...
+    </p>
+
+    <div class="love-buttons" id="loveButtons">
+
+        <button class="yes-btn" onclick="loveYes()">
+            YES ❤️
+        </button>
+
+        <button class="no-btn" onclick="loveNo()">
+            NO 🥺
+        </button>
+
+    </div>
+
+    <div class="cry" id="cry">
+        😭💔
+    </div>
+
+    <div id="loveResult"></div>
+
+</div>
+</section>
+
+
+<!-- =====================================================
+     PAGE 4 LAST OPTION
+===================================================== -->
+
+<section class="page" id="page4">
+<div class="card last-option-card">
+
+    <div class="last-heart">
+        💗
+    </div>
+
+    <h2>
+        This Is The Last Option 💗
+    </h2>
+
+    <div class="last-question">
+        Are You Ready For Your Birthday Surprise? 🥺❤️
+    </div>
+
+    <p class="last-text">
+        তুমি যদি YES বলো...<br>
+        তাহলে তোমার জন্য আসছে<br>
+        একটা ছোট্ট Birthday Surprise 🎂🥰
+    </p>
+
+    <button class="last-yes" onclick="lastOptionYes()">
+        YES ❤️
+    </button>
+
+</div>
+</section>
+
+
+<!-- =====================================================
+     PAGE 5 CAKE
+===================================================== -->
+
+<section class="page" id="page5">
+<div class="card cake-card">
+
+    <h2>
+        Your Birthday Cake 🎂
+    </h2>
+
+    <p class="subtitle">
+        এবার শুধু একটা কাজ বাকি... 💗
+    </p>
+
+    <div class="cake">
+
+        <div class="plate"></div>
+
+        <div class="layer bottom">
+            <div class="frost"></div>
+        </div>
+
+        <div class="layer mid">
+            <div class="frost"></div>
+        </div>
+
+        <div class="layer top">
+            <div class="frost"></div>
+        </div>
+
+        <div class="candle c1" id="candle1">
+            <div class="flame"></div>
+        </div>
+
+        <div class="candle c2" id="candle2">
+            <div class="flame"></div>
+        </div>
+
+        <div class="candle c3" id="candle3">
+            <div class="flame"></div>
+        </div>
+
+    </div>
+
+    <h3 class="birthday-text">
+        🎂 Happy Birthday To You 🎂
+    </h3>
+
+    <p>
+        চোখ বন্ধ করে একটা wish করো...<br>
+        তারপর মোমবাতিতে ফুঁ দাও 🥰
+    </p>
+
+    <button class="next-btn" onclick="blowCandles()">
+        🌬️ মোমবাতি নিভাও
+    </button>
+
+    <div class="mic-status" id="micStatus">
+        চাইলে নিচের Microphone option-ও ব্যবহার করতে পারো।
+    </div>
+
+    <button class="next-btn"
+            onclick="startBlowDetection()"
+            style="background:#fff;color:#e95e78;border:1px solid #f2b5bd;">
+        🎤 Blow With Microphone
+    </button>
+
+</div>
+</section>
+
+
+<!-- =====================================================
+     PAGE 6 GALLERY
+===================================================== -->
+
+<section class="page" id="page6">
+<div class="card">
+
+    <h2>
+        My Happiness 💗
+    </h2>
+
+    <p class="subtitle">
+        আমার ছোট্ট পৃথিবীর কিছু সুন্দর মুহূর্ত... 🥰
+    </p>
+
+    <div class="gallery-grid">
+
+        <img src="https://drive.google.com/thumbnail?id=1IxQb_SKYuf0hPokHmNPZ2MXHAs54zu5M&sz=w1000"
+             alt="Memory 1">
+
+        <img src="https://drive.google.com/thumbnail?id=1THDePcVIOeDNImr89T1zz0Z3GMV2vHqV&sz=w1000"
+             alt="Memory 2">
+
+        <img src="https://drive.google.com/thumbnail?id=19PHgg-erVKVKXGNE3lTHH37CoB9k-ZUV&sz=w1000"
+             alt="Memory 3">
+
+        <img src="https://drive.google.com/thumbnail?id=1oRHaFqR82XBGJn94tN7kK2ox0d1rH8Dk&sz=w1000"
+             alt="Memory 4">
+
+        <img src="https://drive.google.com/thumbnail?id=1TbMygQc1iZmZXIgEyY56L9MlHbO76Vxp&sz=w1000"
+             alt="Memory 5">
+
+        <img src="https://drive.google.com/thumbnail?id=1zA49-meZXTbnf8l6Twz4ocQSYHmcBjqv&sz=w1000"
+             alt="Memory 6">
+
+        <img src="https://drive.google.com/thumbnail?id=1e0AO70lY1H0-tPrNFpd6bFoxWXhEvTrd&sz=w1000"
+             alt="Memory 7">
+
+    </div>
+
+    <button class="next-btn" onclick="goTo(7)">
+        💌 Special Message
+    </button>
+
+</div>
+</section>
+
+
+<!-- =====================================================
+     PAGE 7 MESSAGE
+===================================================== -->
+
+<section class="page" id="page7">
+<div class="card message-card">
+
+    <h2>
+        Special Message 💌
+    </h2>
+
+    <p class="message-sub">
+        জন্মদিন উপলক্ষে আমার মনের কিছু কথা...
+    </p>
+
+    <div class="message">
+
+আনিকা, শুরুতেই জানাই তোমায় জন্ম দিনের অনেক অনেক শুভেচ্ছা।
+তোমার প্রতিটি দিন হোক মঙ্গলময়। আগামীর ভবিষ্যত হোক উজ্জ্বল।
+
+আজকের এই দিনে আমি তোমাকে কিছু কথা বলতে চাই। আমি জানি আমি তোমায় অনেক কষ্ট দিয়েছি। আমার জন্য তোমার চোখ থেকে ঝরেছে অজস্র অশ্রু। কিন্তু তুমি বিশ্বাস করো আমি ইচ্ছে করে তোমার সাথে এমন আচরণ করিনি। যা হয়েছে তা আমার অজানা বা অনিচ্ছাকৃত ভুল। যার জন্য আমি তোমার কাছে ক্ষমা প্রার্থী। আমি আমার হৃদয় থেকে কখনো এমন কোন কাজ করিনি যাতে তোমার মনে আঘাত লাগে। কারণ আমি তোমায় ভালোবাসি। কিন্তু তবুও অনেক সময় তোমার সাথে খারাপ আচরণ করেছি তার জন্য আমায় তুমি ক্ষমা করে দিও।
+
+সবশেষে বলতে চাই, আমি তোমায় ভালোবাসি এবং ভালোবাসবো। বিশ্বাস করে যখন হাতটা ধরেছো তখন এইটুকু বিশ্বাস করতে পারো যে মৃত্যুর আগ পর্যন্ত এ হাত ছাড়বো না।
+
+    </div>
+
+    <div class="signature">
+        ইতি<br>
+        তোমার প্রিয়<br>
+        সাজিদ ❤️
+    </div>
+
+    <button class="next-btn" onclick="goTo(8)">
+        ❤️ One Last Thing
+    </button>
+
+</div>
+</section>
+
+
+<!-- =====================================================
+     PAGE 8 FINAL
+===================================================== -->
+
+<section class="page" id="page8">
+<div class="card final-card">
+
+    <h2>
+        I Love You So Much ❤️
+    </h2>
+
+    <div class="kiss-hearts">
+        💕 💕 💕
+    </div>
+
+    <div class="kiss-bears">
+        🧸 🧸
+    </div>
+
+    <div class="kiss-hearts">
+        💋 ❤️ 💋
+    </div>
+
+    <p class="final-love">
+        Happy Birthday, Anika! 🎂
+    </p>
+
+    <p style="margin-top:15px;">
+        তুমি আমার happiness,<br>
+        তুমি আমার favourite person,<br>
+        তুমি আমার ভালোবাসা। ❤️
+    </p>
+
+    <p style="margin-top:15px;color:#8b655c;">
+        Forever & Always ♾️❤️
+    </p>
+
+</div>
+</section>
+
+
+<!-- =====================================================
+     AUDIO
+===================================================== -->
+
+<audio id="birthdayMusic"
+       preload="auto"
+       loop>
+
+    <source
+      src="https://drive.google.com/uc?export=download&id=1e0AO70lY1H0-tPrNFpd6bFoxWXhEvTrd"
+      type="audio/mpeg">
+
+</audio>
+
+</div>
+
+
+<script>
+
+/* =====================================================
+   SETTINGS
+===================================================== */
+
+const CORRECT_PASSWORD = "16102025";
+
+let currentPage = 1;
+let passwordValue = "";
+let musicStarted = false;
+
+let balloonPopped = false;
+
+let microphoneStream = null;
+let audioContext = null;
+let analyser = null;
+
+
+/* =====================================================
+   FLOATING HEARTS
+===================================================== */
+
+const heartsContainer =
+    document.getElementById("hearts");
+
+const heartSymbols =
+    ["❤","💕","💗","💖","💘","♡"];
+
+for(let i=0;i<30;i++){
+
+    const heart =
+        document.createElement("div");
+
+    heart.className="heart";
+
+    heart.innerHTML =
+        heartSymbols[
+            Math.floor(
+                Math.random()*heartSymbols.length
+            )
+        ];
+
+    heart.style.left =
+        Math.random()*100+"%";
+
+    heart.style.fontSize =
+        (10+Math.random()*20)+"px";
+
+    heart.style.animationDuration =
+        (7+Math.random()*8)+"s";
+
+    heart.style.animationDelay =
+        (-Math.random()*10)+"s";
+
+    heartsContainer.appendChild(heart);
+}
+
+
+/* =====================================================
+   PAGE NAVIGATION
+===================================================== */
+
+function goTo(pageNumber){
+
+    const oldPage =
+        document.getElementById(
+            "page"+currentPage
+        );
+
+    const newPage =
+        document.getElementById(
+            "page"+pageNumber
+        );
+
+    if(!newPage) return;
+
+    oldPage.classList.remove("active");
+
+    setTimeout(()=>{
+
+        newPage.classList.add("active");
+
+    },100);
+
+    currentPage=pageNumber;
+
+    createLoveTransition();
+
+    /*
+       Cake page-এ গেলে গান 33 second থেকে শুরু
+    */
+
+    if(pageNumber===5){
+
+        const music =
+            document.getElementById(
+                "birthdayMusic"
+            );
+
+        try{
+
+            music.currentTime=33;
+
+            music.play().catch(()=>{});
+
+        }catch(e){}
+
+    }
+}
+
+
+/* =====================================================
+   LAST OPTION YES
+===================================================== */
+
+function lastOptionYes(){
+
+    launchConfetti();
+
+    const music =
+        document.getElementById(
+            "birthdayMusic"
+        );
+
+    try{
+
+        /*
+           Cake আসার সময় গান 33 sec থেকে
+        */
+
+        music.currentTime=33;
+
+        music.play().catch(()=>{});
+
+    }catch(e){}
+
+    setTimeout(()=>{
+
+        goTo(5);
+
+    },700);
+}
+
+
+/* =====================================================
+   ROMANTIC TRANSITION
+===================================================== */
+
+function createLoveTransition(){
+
+    for(let i=0;i<12;i++){
+
+        const heart =
+            document.createElement("div");
+
+        heart.innerHTML =
+            ["❤","💕","💗","✨"][
+                Math.floor(Math.random()*4)
+            ];
+
+        heart.style.position="fixed";
+        heart.style.left="50%";
+        heart.style.top="50%";
+        heart.style.zIndex="200";
+        heart.style.pointerEvents="none";
+        heart.style.fontSize=
+            (15+Math.random()*25)+"px";
+
+        const x =
+            (Math.random()-.5)*
+            window.innerWidth;
+
+        const y =
+            (Math.random()-.5)*
+            window.innerHeight;
+
+        heart.animate(
+            [
+                {
+                    transform:
+                    "translate(-50%,-50%) scale(.2)",
+                    opacity:1
+                },
+                {
+                    transform:
+                    `translate(
+                        calc(-50% + ${x}px),
+                        calc(-50% + ${y}px)
+                    ) scale(1.5)`,
+                    opacity:0
+                }
+            ],
+            {
+                duration:900,
+                easing:"ease-out"
+            }
+        );
+
+        document.body.appendChild(heart);
+
+        setTimeout(()=>{
+            heart.remove();
+        },1000);
+    }
+}
+
+
+/* =====================================================
+   PASSWORD
+===================================================== */
+
+const passInputs =
+    document.querySelectorAll(
+        "#passcode input"
+    );
+
+function pressKey(number){
+
+    if(passwordValue.length>=8)
+        return;
+
+    passwordValue+=number;
+
+    updatePasscode();
+
+    if(passwordValue.length===8){
+
+        setTimeout(
+            checkPassword,
+            250
+        );
+
+    }
+}
+
+function updatePasscode(){
+
+    passInputs.forEach(
+        (input,index)=>{
+
+            input.value =
+                passwordValue[index] || "";
+
+        }
+    );
+}
+
+function clearPass(){
+
+    passwordValue =
+        passwordValue.slice(0,-1);
+
+    updatePasscode();
+
+    document.getElementById(
+        "passMessage"
+    ).textContent="";
+}
+
+function checkPassword(){
+
+    const teddy =
+        document.getElementById(
+            "loginTeddy"
+        );
+
+    const message =
+        document.getElementById(
+            "passMessage"
+        );
+
+    if(passwordValue===
+       CORRECT_PASSWORD){
+
+        teddy.classList.remove("sad");
+
+        message.className=
+            "error success";
+
+        message.textContent=
+            "ঠিক হয়েছে! ❤️ দরজাটা খুলে গেল...";
+
+        launchConfetti();
+
+        startMusicFrom3Seconds();
+
+        setTimeout(()=>{
+
+            goTo(2);
+
+        },1300);
+
+    }else{
+
+        teddy.classList.add("sad");
+
+        message.className="error";
+
+        message.textContent=
+            "আহা! 🥺 পাসওয়ার্ডটি ভুল হয়েছে... আবার চেষ্টা করো।";
+
+        setTimeout(()=>{
+
+            passwordValue="";
+
+            updatePasscode();
+
+        },800);
+
+    }
+}
+
+
+/* =====================================================
+   MUSIC
+===================================================== */
+
+function startMusicFrom3Seconds(){
+
+    const music =
+        document.getElementById(
+            "birthdayMusic"
+        );
+
+    if(musicStarted)
+        return;
+
+    musicStarted=true;
+
+    try{
+
+        music.currentTime=3;
+
+        const playPromise =
+            music.play();
+
+        if(playPromise){
+
+            playPromise.catch(()=>{
+
+                console.log(
+                    "Browser autoplay blocked."
+                );
+
+            });
+
+        }
+
+    }catch(error){
+
+        console.log(error);
+
+    }
+}
+
+
+/* =====================================================
+   BALLOON
+===================================================== */
+
+const projectile =
+    document.getElementById(
+        "projectile"
+    );
+
+const balloon =
+    document.getElementById(
+        "balloon"
+    );
+
+const balloonArea =
+    document.getElementById(
+        "balloonArea"
+    );
+
+const rubber =
+    document.getElementById(
+        "rubber"
+    );
+
+let dragging=false;
+
+let startX=0;
+let startY=0;
+
+let projectileStartX=0;
+let projectileStartY=0;
+
+function getPointer(e){
+
+    if(
+        e.touches &&
+        e.touches.length
+    ){
+
+        return{
+            x:e.touches[0].clientX,
+            y:e.touches[0].clientY
+        };
+
+    }
+
+    return{
+        x:e.clientX,
+        y:e.clientY
+    };
+}
+
+function startDrag(e){
+
+    if(balloonPopped)
+        return;
+
+    dragging=true;
+
+    const p=getPointer(e);
+
+    startX=p.x;
+    startY=p.y;
+
+    projectileStartX =
+        projectile.offsetLeft;
+
+    projectileStartY =
+        projectile.offsetTop;
+
+    e.preventDefault();
+}
+
+function dragMove(e){
+
+    if(!dragging)
+        return;
+
+    const p=getPointer(e);
+
+    const dx=p.x-startX;
+    const dy=p.y-startY;
+
+    const max=100;
+
+    const distance =
+        Math.sqrt(dx*dx+dy*dy);
+
+    const ratio =
+        distance>max
+        ?max/distance
+        :1;
+
+    const finalDx=dx*ratio;
+    const finalDy=dy*ratio;
+
+    projectile.style.left =
+        (projectileStartX+
+         finalDx)+"px";
+
+    projectile.style.top =
+        (projectileStartY+
+         finalDy)+"px";
+
+    const angle =
+        Math.atan2(
+            finalDy,
+            finalDx
+        );
+
+    rubber.style.transform =
+        `rotate(${angle}rad)
+         scaleX(${1+distance/100})`;
+}
+
+function releaseDrag(e){
+
+    if(!dragging)
+        return;
+
+    dragging=false;
+
+    const p=getPointer(e);
+
+    const dx=p.x-startX;
+    const dy=p.y-startY;
+
+    shootProjectile(dx,dy);
+}
+
+function shootProjectile(dx,dy){
+
+    if(balloonPopped)
+        return;
+
+    const distance =
+        Math.sqrt(dx*dx+dy*dy);
+
+    if(distance<15){
+
+        projectile.style.left =
+            projectileStartX+"px";
+
+        projectile.style.top =
+            projectileStartY+"px";
+
+        return;
+    }
+
+    const directionX=-dx*7;
+    const directionY=-dy*7;
+
+    const oldLeft =
+        projectile.offsetLeft;
+
+    const oldTop =
+        projectile.offsetTop;
+
+    projectile.style.transition =
+        "left .7s cubic-bezier(.15,.8,.25,1), top .7s cubic-bezier(.15,.8,.25,1)";
+
+    projectile.style.left =
+        (oldLeft+directionX)+"px";
+
+    projectile.style.top =
+        (oldTop+directionY)+"px";
+
+    setTimeout(()=>{
+
+        if(distance>35){
+
+            popBalloon();
+
+        }else{
+
+            resetProjectile();
+
+        }
+
+    },650);
+}
+
+function resetProjectile(){
+
+    projectile.style.transition =
+        "all .45s ease";
+
+    projectile.style.left =
+        projectileStartX+"px";
+
+    projectile.style.top =
+        projectileStartY+"px";
+}
+
+function popBalloon(){
+
+    balloonPopped=true;
+
+    balloon.classList.add("pop");
+
+    createParticles();
+
+    projectile.style.opacity="0";
+
+    launchConfetti();
+
+    document.getElementById(
+        "balloonNext"
+    ).style.display="inline-block";
+}
+
+function createParticles(){
+
+    const container =
+        document.getElementById(
+            "particles"
+        );
+
+    const icons=[
+        "❤️","💕","✨",
+        "💗","🎉","⭐","💖"
+    ];
+
+    for(let i=0;i<22;i++){
+
+        const p =
+            document.createElement("div");
+
+        p.className="particle";
+
+        p.innerHTML =
+            icons[
+                Math.floor(
+                    Math.random()*icons.length
+                )
+            ];
+
+        p.style.left =
+            (48+Math.random()*10)+"%";
+
+        p.style.top =
+            (22+Math.random()*20)+"%";
+
+        p.style.setProperty(
+            "--x",
+            ((Math.random()-.5)*300)+"px"
+        );
+
+        p.style.setProperty(
+            "--y",
+            ((Math.random()-.5)*250)+"px"
+        );
+
+        container.appendChild(p);
+
+        setTimeout(()=>{
+            p.remove();
+        },1000);
+    }
+}
+
+projectile.addEventListener(
+    "pointerdown",
+    startDrag
+);
+
+window.addEventListener(
+    "pointermove",
+    dragMove
+);
+
+window.addEventListener(
+    "pointerup",
+    releaseDrag
+);
+
+
+/* =====================================================
+   LOVE QUESTION
+===================================================== */
+
+function loveYes(){
+
+    const result =
+        document.getElementById(
+            "loveResult"
+        );
+
+    result.innerHTML=`
+
+        <div style="
+        font-size:40px;
+        margin-top:20px;
+        animation:bounceBear 1s infinite;">
+        🥰💗🎉
+        </div>
+
+        <p style="
+        color:#e85d77;
+        font-weight:700;
+        margin-top:10px;">
+        আমি জানতাম! ❤️
+        </p>
+    `;
+
+    launchConfetti();
+
+    /*
+       এখন সরাসরি Cake যাবে না।
+       আগে Last Option আসবে।
+    */
+
+    setTimeout(()=>{
+
+        goTo(4);
+
+    },1800);
+}
+
+function loveNo(){
+
+    document.getElementById(
+        "loveButtons"
+    ).style.display="none";
+
+    document.getElementById(
+        "cry"
+    ).style.display="block";
+
+    document.getElementById(
+        "loveResult"
+    ).innerHTML=`
+
+        <p style="
+        color:#d9576e;
+        margin-top:10px;">
+        তুমি না বললে আমার teddy তো কাঁদবেই... 😭💔
+        </p>
+    `;
+
+    setTimeout(()=>{
+
+        goTo(4);
+
+    },2200);
+}
+
+
+/* =====================================================
+   CAKE
+===================================================== */
+
+function blowCandles(){
+
+    const candles =
+        document.querySelectorAll(
+            ".candle"
+        );
+
+    candles.forEach(
+        (candle,index)=>{
+
+            setTimeout(()=>{
+
+                candle.classList.add(
+                    "off"
+                );
+
+            },index*200);
+
+        }
+    );
+
+    launchConfetti();
+
+    setTimeout(()=>{
+
+        goTo(6);
+
+    },1500);
+}
+
+
+/* =====================================================
+   MICROPHONE BLOW
+===================================================== */
+
+async function startBlowDetection(){
+
+    const status =
+        document.getElementById(
+            "micStatus"
+        );
+
+    if(
+        !navigator.mediaDevices ||
+        !navigator.mediaDevices.getUserMedia
+    ){
+
+        status.textContent=
+            "এই browser-এ microphone support নেই। নিচের মোমবাতি নিভাও button ব্যবহার করো।";
+
+        return;
+    }
+
+    try{
+
+        microphoneStream =
+            await navigator.mediaDevices.getUserMedia({
+                audio:true
+            });
+
+        audioContext =
+            new(
+                window.AudioContext ||
+                window.webkitAudioContext
+            )();
+
+        const source =
+            audioContext.createMediaStreamSource(
+                microphoneStream
+            );
+
+        analyser =
+            audioContext.createAnalyser();
+
+        analyser.fftSize=512;
+
+        source.connect(analyser);
+
+        status.textContent=
+            "🎤 এখন microphone-এর দিকে ফুঁ দাও...";
+
+        detectBlow();
+
+    }catch(error){
+
+        status.textContent=
+            "Microphone permission পাওয়া যায়নি। Button দিয়ে মোমবাতি নিভিয়ে দাও ❤️";
+
+    }
+}
+
+function detectBlow(){
+
+    if(!analyser)
+        return;
+
+    const data =
+        new Uint8Array(
+            analyser.fftSize
+        );
+
+    analyser.getByteTimeDomainData(
+        data
+    );
+
+    let sum=0;
+
+    for(
+        let i=0;
+        i<data.length;
+        i++
+    ){
+
+        const value =
+            (data[i]-128)/128;
+
+        sum+=value*value;
+    }
+
+    const rms =
+        Math.sqrt(
+            sum/data.length
+        );
+
+    if(rms>.17){
+
+        if(currentPage===5){
+
+            document.getElementById(
+                "micStatus"
+            ).textContent=
+                "🌬️ ফুঁ লাগলো! মোমবাতি নিভে গেল ❤️";
+
+            blowCandles();
+
+            return;
+        }
+    }
+
+    requestAnimationFrame(
+        detectBlow
+    );
+}
+
+
+/* =====================================================
+   CONFETTI
+===================================================== */
+
+function launchConfetti(){
+
+    const colors=[
+        "#ff6f91",
+        "#ffd166",
+        "#7bdff2",
+        "#b8e986",
+        "#cdb4db",
+        "#ff9f68"
+    ];
+
+    for(let i=0;i<70;i++){
+
+        const piece =
+            document.createElement(
+                "div"
+            );
+
+        piece.className="confetti";
+
+        piece.style.left =
+            Math.random()*100+"vw";
+
+        piece.style.background =
+            colors[
+                Math.floor(
+                    Math.random()*colors.length
+                )
+            ];
+
+        piece.style.transform =
+            `rotate(
+                ${Math.random()*360}deg
+            )`;
+
+        piece.style.animationDelay =
+            Math.random()*.5+"s";
+
+        piece.style.animationDuration =
+            (1.8+Math.random()*1.8)+"s";
+
+        document.body.appendChild(
+            piece
+        );
+
+        setTimeout(()=>{
+
+            piece.remove();
+
+        },4000);
+    }
+}
+
+
+/* =====================================================
+   IMAGE FALLBACK
+===================================================== */
+
+document
+.querySelectorAll(
+    ".gallery-grid img"
+)
+.forEach(img=>{
+
+    img.addEventListener(
+        "error",
+        ()=>{
+
+            img.style.objectFit=
+                "contain";
+
+            img.src=
+                "data:image/svg+xml;charset=UTF-8,"+
+                encodeURIComponent(`
+
+                <svg xmlns="http://www.w3.org/2000/svg"
+                     width="500"
+                     height="500">
+
+                    <rect width="100%"
+                          height="100%"
+                          fill="#fff0e6"/>
+
+                    <text x="50%"
+                          y="47%"
+                          text-anchor="middle"
+                          font-family="Arial"
+                          font-size="25"
+                          fill="#b77b70">
+                        ❤️
+                    </text>
+
+                    <text x="50%"
+                          y="57%"
+                          text-anchor="middle"
+                          font-family="Arial"
+                          font-size="15"
+                          fill="#b77b70">
+                        Photo
+                    </text>
+
+                </svg>
+            `);
+
+        }
+    );
+});
+
+
+/* =====================================================
+   KEYBOARD
+===================================================== */
+
+document.addEventListener(
+    "keydown",
+    (e)=>{
+
+        if(currentPage!==1)
+            return;
+
+        if(/^[0-9]$/.test(e.key)){
+
+            pressKey(e.key);
+
+        }
+
+        if(e.key==="Backspace"){
+
+            clearPass();
+
+        }
+
+        if(e.key==="Enter"){
+
+            checkPassword();
+
+        }
+
+    }
+);
+
+
+/* =====================================================
+   INITIAL
+===================================================== */
+
+updatePasscode();
+
+</script>
+
+</body>
+</html>
