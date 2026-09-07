@@ -325,7 +325,16 @@ top:-29px;left:-1px;box-shadow:0 0 20px #ffb44c;animation:flicker .18s infinite 
 <div class="confetti" id="confetti"></div>
 </div>
 
-<audio id="music" preload="auto">
+<!--
+  MUSIC SETUP:
+  Put your downloaded birthday song in the SAME GitHub folder as this HTML
+  and name it exactly: music.mp3
+  The local file is the primary source because GitHub Pages can reliably stream it.
+  Google Drive is kept only as a fallback.
+-->
+<audio id="music" preload="auto" playsinline>
+  <source src="music.mp3" type="audio/mpeg">
+  <source src="https://drive.usercontent.google.com/download?id=1e0AO70lY1H0-tPrNFpd6bFoxWXhEvTrd&export=download" type="audio/mpeg">
   <source src="https://drive.google.com/uc?export=download&id=1e0AO70lY1H0-tPrNFpd6bFoxWXhEvTrd" type="audio/mpeg">
 </audio>
 
@@ -408,16 +417,29 @@ function setMusicTime(t){
   try{ music.currentTime=t; }catch(e){}
 }
 
-function startMusic(){
+async function startMusic(){
   const music=document.getElementById("music");
   music.volume=.55;
-  music.play().catch(()=>{});
+  try{
+    // Make sure the selected source is loaded before trying to play.
+    if(music.readyState===0) music.load();
+    await music.play();
+    document.getElementById("musicBtn").textContent="🔊";
+  }catch(err){
+    // If autoplay/source loading fails, the speaker button remains available.
+    document.getElementById("musicBtn").textContent="🎵";
+    console.warn("Music could not start:", err);
+  }
 }
 
-document.getElementById("musicBtn").addEventListener("click",()=>{
+document.getElementById("musicBtn").addEventListener("click",async()=>{
   const m=document.getElementById("music");
-  if(m.paused){m.play().catch(()=>{}); document.getElementById("musicBtn").textContent="🔊";}
-  else {m.pause();document.getElementById("musicBtn").textContent="🔇";}
+  if(m.paused){
+    await startMusic();
+  }else{
+    m.pause();
+    document.getElementById("musicBtn").textContent="🔇";
+  }
 });
 
 /* Password */
@@ -632,6 +654,9 @@ function burstConfetti(){
 document.getElementById("music").addEventListener("ended",()=>{
   setMusicTime(MUSIC_START);
   startMusic();
+});
+document.getElementById("music").addEventListener("error",()=>{
+  document.getElementById("musicBtn").textContent="🎵";
 });
 
 // Robust first-page initialization for older Android/Chrome.
